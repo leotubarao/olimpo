@@ -1,0 +1,126 @@
+.ltco_about {
+  &__cta {
+    background-color: ltco_color('yellow');
+    @extend %ctaContainer;
+  }
+
+  &__full_image {
+    @extend %backgroundCover;
+    margin-bottom: 0;
+
+    @include media-breakpoint-down(lg) {
+      height: 300px;
+
+      > img {
+        display: none;
+      }
+    }
+  }
+
+  &__triade_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+
+    @include media-breakpoint-down(md) {
+      gap: 1rem;
+      flex-direction: column;
+    }
+
+    &__list {
+      display: grid;
+      padding-left: 0;
+      margin-bottom: 0;
+
+      li {
+        grid-area: 1/2/1/2;
+        display: grid;
+        gap: 2rem;
+
+        @include media-breakpoint-up(lg) {
+          grid-template-columns: 200px 1fr;
+          align-items: center;
+        }
+
+        &:nth-child(1) {
+          animation: showTriadeLoop1 18s linear infinite;
+        }
+
+        &:nth-child(2) {
+          animation: showTriadeLoop2 18s linear infinite;
+        }
+
+        &:nth-child(3) {
+          animation: showTriadeLoop3 18s linear infinite;
+        }
+
+        figure {
+          background-color: ltco_color();
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          display: flex;
+          margin: 0 auto;
+
+          img {
+            margin: auto;
+          }
+        }
+
+        .content {
+          padding: 1.5rem 2rem;
+          border: 1px solid;
+
+          @include media-breakpoint-up(lg) {
+            max-width: 500px;
+          }
+
+          > *:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes showTriadeLoop1 {
+  33%,
+  97% {
+    opacity: 0;
+  }
+
+  0%,
+  30%,
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes showTriadeLoop2 {
+  0%,
+  30%,
+  66%,
+  100% {
+    opacity: 0;
+  }
+
+  33%,
+  63% {
+    opacity: 1;
+  }
+}
+
+@keyframes showTriadeLoop3 {
+  0%,
+  63%,
+  100% {
+    opacity: 0;
+  }
+
+  66%,
+  97% {
+    opacity: 1;
+  }
+}

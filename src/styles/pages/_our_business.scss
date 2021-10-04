@@ -1,0 +1,60 @@
+.ltco_our_business {
+  &__cta {
+    background-color: ltco_color('yellow');
+    @extend %ctaContainer;
+  }
+
+  &__triade {
+    .row-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+
+      @include media-breakpoint-down(md) {
+        display: none;
+      }
+
+      @include media-breakpoint-up(xl) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+
+      @include media-breakpoint-down(lg) {
+        > * {
+          max-width: calc(50% - 0.5rem);
+        }
+      }
+    }
+
+    .splide {
+      padding: 0 3rem;
+
+      @include media-breakpoint-up(lg) {
+        display: none;
+      }
+    }
+
+    &__item {
+      background-color: ltco_color('gray-100');
+      border: 1px solid ltco_color('gray-500');
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 4rem 3rem;
+      gap: 1rem;
+      margin-bottom: 1px;
+
+      img {
+        max-height: 90px;
+      }
+
+      .heading,
+      .content {
+        text-align: center;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

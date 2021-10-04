@@ -1,0 +1,9 @@
+<svg id="icon-facebook" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+  <g id="Retângulo_49" data-name="Retângulo 49" fill="none" stroke="#fff" stroke-width="1">
+    <rect width="30" height="30" rx="15" stroke="none"/>
+    <rect x="0.5" y="0.5" width="29" height="29" rx="14.5" fill="none"/>
+  </g>
+  <g id="facebook" transform="translate(11.188 7.605)">
+    <path id="Caminho_33" data-name="Caminho 33" d="M170.494,99.856h3.078V92.424h2.066s.193-1.2.288-2.511h-2.341V88.2a.726.726,0,0,1,.668-.6h1.677V85h-2.281c-3.229,0-3.154,2.5-3.154,2.877v2.045H169v2.5h1.5Zm0,0" transform="translate(-168.996 -85)" fill="#fff"/>
+  </g>
+</svg>

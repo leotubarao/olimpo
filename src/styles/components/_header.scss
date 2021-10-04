@@ -1,0 +1,185 @@
+.header {
+  @extend %backgroundCover;
+  background-color: ltco_color();
+  position: relative;
+  padding-top: 90px;
+  overflow: hidden;
+
+  .ltco_icon_arrow_down {
+    align-self: center;
+    margin: auto;
+    grid-column: 1 / -1;
+  }
+
+  &:not(.home):not(.no-thumbs):before {
+    content: '';
+    background-color: ltco_color();
+    position: absolute;
+    opacity: 80%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    color: ltco_color('white');
+  }
+
+  .heading {
+    text-transform: uppercase;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    color: inherit;
+
+    small {
+      display: block;
+    }
+  }
+
+  &.default {
+    height: 300px;
+    display: flex;
+    align-items: center;
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .heading {
+      margin-bottom: 0;
+    }
+  }
+
+  &.default:not(.no-thumbs) {
+    height: 400px;
+
+    .heading {
+      margin-bottom: 4rem;
+    }
+
+    .ltco_form_filter {
+      margin-top: -4rem;
+      margin-bottom: 3rem;
+    }
+  }
+
+  &.home {
+    background-color: ltco_color();
+    position: relative;
+    padding-top: 90px;
+
+    .container {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      align-items: center;
+      gap: 1rem;
+      position: relative;
+      @extend .ltco-py-3;
+
+      @include media-breakpoint-down(sm) {
+        &:before {
+          content: '';
+          background: linear-gradient(90deg, ltco_color() 20%, rgba(ltco_color(), .7) 60%, rgba(ltco_color(), 0) 100%);
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          z-index: 11;
+        }
+
+        .ltco_social {
+          grid-area: 1/1/2/2;
+          z-index: 20;
+        }
+
+        .content {
+          grid-area: 1/2/2/3;
+        }
+
+        .carousel {
+          grid-area: 1/1/2/-1;
+
+          &-caption,
+          [data-slide] {
+            display: none;
+          }
+        }
+      }
+
+      @include media-breakpoint-only(md) {
+        grid-template-columns: 270px 1fr;
+
+        .ltco_social {
+          display: none;
+        }
+      }
+
+      @include media-breakpoint-up(lg) {
+        grid-template-columns: 34px 300px 1fr;
+        gap: 2rem;
+      }
+
+      .content {
+        z-index: 20;
+      }
+    }
+  }
+
+  &.enterprise {
+    .container {
+      display: grid;
+      align-items: center;
+      gap: 1rem;
+      position: relative;
+      @extend .ltco-py-3;
+
+      @include media-breakpoint-only(md) {
+        grid-template-columns: 400px 1fr;
+      }
+
+      @include media-breakpoint-up(lg) {
+        grid-template-columns: 500px 1fr;
+        gap: 2rem;
+      }
+
+      @include media-breakpoint-up(xl) {
+        gap: 3rem 6rem;
+      }
+
+      .ltco_form_wrapper {
+        @include media-breakpoint-down(md) {
+          border-top: 1px solid rgba(ltco_color('white'), .3);
+          padding-top: 2rem;
+        }
+
+        form {
+          display: grid;
+          gap: 1rem;
+          align-items: flex-end;
+
+          @include media-breakpoint-up(lg) {
+            grid-template-columns: 1fr 1fr;
+          }
+
+          @include media-breakpoint-up(xl) {
+            gap: 1rem 2rem;
+          }
+
+          * {
+            margin-bottom: 0;
+          }
+
+          .ltco_button {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

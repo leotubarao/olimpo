@@ -1,0 +1,12 @@
+/var/www/html/wp-content/themes/theme/node_modules;
+/var/www/html/wp-content/themes/theme/src;
+
+/var/www/html/wp-content/themes/theme/.babelrc;
+/var/www/html/wp-content/themes/theme/.editorconfig;
+/var/www/html/wp-content/themes/theme/.gitignore;
+/var/www/html/wp-content/themes/theme/.gitmodules;
+/var/www/html/wp-content/themes/theme/gulpfile.js;
+/var/www/html/wp-content/themes/theme/gulppath.json;
+/var/www/html/wp-content/themes/theme/ignore_duplicator.txt;
+/var/www/html/wp-content/themes/theme/package.json;
+/var/www/html/wp-content/themes/theme/yarn.lock;
