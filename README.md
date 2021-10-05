@@ -1,1 +1,1 @@
-# olimpo
+# Tema WordPress para Olimpo

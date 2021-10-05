@@ -1,0 +1,35 @@
+.carousel {
+  background-color: ltco_color('white');
+  width: 100%;
+
+  &-image {
+    @extend %backgroundCover;
+    display: block;
+    margin-bottom: 0;
+    padding-top: percentage(9 / 16);
+
+    @include media-breakpoint-up(md) {
+      height: 300px;
+      padding-top: 0;
+    }
+
+    @include media-breakpoint-up(lg) {
+      height: 400px;
+    }
+  }
+
+  &-caption {
+    background-color: rgba(ltco_color('gray-700'), 0.7);
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem 2rem;
+    text-align: right;
+
+    @extend .text-white;
+
+    > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

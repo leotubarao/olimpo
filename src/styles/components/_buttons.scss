@@ -1,0 +1,21 @@
+.ltco_button {
+  width: 100%;
+  max-width: 300px;
+  position: relative;
+
+  &:after {
+    content: '';
+    width: 50%;
+    max-width: 120px;
+    height: 1px;
+    background-color: currentColor;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%);
+  }
+
+  @include media-breakpoint-up(sm) {
+    max-width: 250px;
+  }
+}

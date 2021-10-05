@@ -1,0 +1,103 @@
+.home {
+  & .ltco_enterprises {
+    overflow: hidden;
+
+    &__list__item.heading {
+      background-color: ltco_color('white');
+      position: relative;
+      border: 1px solid ltco_color('gray-300');
+      padding: 30px 25px;
+
+      @include media-breakpoint-up(md) {
+        height: 329px * 9 / 16;
+      }
+
+      @include media-breakpoint-up(lg) {
+        height: 441px * 9 / 16;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      @include media-breakpoint-up(xl) {
+        height: 250px;
+      }
+
+      @include media-breakpoint-up(xxl) {
+        height: 300px;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+
+        * {
+          margin-bottom: 0;
+        }
+
+        .ltco_golden_icon {
+          margin-right: -80px;
+          margin-left: 1rem;
+
+          @include media-breakpoint-up(lg) {
+            margin-right: -60px;
+          }
+        }
+      }
+
+      p {
+        color: ltco_color('gray-500');
+      }
+    }
+  }
+
+  & .ltco_about {
+    background-color: ltco_color('gray-100');
+    display: grid;
+    @include make-container-grid-layout();
+
+    .image {
+      margin-bottom: 0;
+      grid-column: 1/-1;
+      max-height: 620px;
+      @extend %backgroundCover;
+      @include aspect-ratio();
+
+      @include media-breakpoint-up(lg) {
+        grid-column: 1/5;
+      }
+    }
+
+    .description {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+
+      @include media-breakpoint-down(sm) {
+        align-items: center;
+        text-align: center;
+      }
+
+      @include media-breakpoint-up(sm) {
+        grid-column: 2/-2;
+      }
+
+      @include media-breakpoint-up(lg) {
+        grid-column: 5/8;
+      }
+
+      @extend .ltco-px-2;
+      @extend .ltco-py-3;
+
+      @extend .ltco-px-sm-1;
+      @extend .ltco-px-md-4;
+
+      @extend .ltco-pl-lg-5;
+      @extend .ltco-pr-lg-0;
+
+      @extend .ltco-py-xl-5;
+    }
+  }
+}

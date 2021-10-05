@@ -1,0 +1,40 @@
+/* .ltco_form {
+  [type="submit"] {
+    width: 100%;
+    max-width: 200px;
+  }
+} */
+
+.ltco_form_filter {
+  .header & {
+    margin-bottom: 1rem;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+
+    select {
+      height: calc(1.5em + 1.5rem + 2px);
+      padding-left: 1rem;
+    }
+  }
+
+  .ltco_main & {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    .archive .ltco_main & {
+      justify-content: flex-end;
+    }
+
+    .home .ltco_main & {
+      .custom-select {
+        max-width: 250px;
+        margin-right: auto;
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.splide {
+  $this: &;
+
+  &.padding {
+    padding: 1rem 2em;
+
+    #{$this}__arrow {
+      &--next {
+        right: 0;
+      }
+
+      &--prev {
+        left: 0;
+      }
+    }
+  }
+
+  &__list {
+    cursor: grab;
+  }
+
+  &__pagination__page {
+    width: 12px !important;
+    height: 12px !important;
+    background-color: ltco_color('white') !important;
+    border: 1px solid ltco_color('gray-500') !important;
+    opacity: 1 !important;
+
+    &.is-active {
+      transform: inherit !important;
+      background-color: ltco_color() !important;
+      border: 1px solid ltco_color() !important;
+    }
+  }
+}

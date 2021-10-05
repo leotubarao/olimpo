@@ -1,0 +1,209 @@
+%hover {
+  @include font-size(12);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.ltco_navbar_header {
+  background-color: transparent;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: $zindex-sticky;
+  border-bottom: 1px solid rgba(ltco_color('white'), .1);
+
+  .navbar-brand {
+    @include media-breakpoint-down(xl) {
+      margin-right: 0;
+
+      img {
+        width: 160px;
+      }
+    }
+
+    img {
+      pointer-events: none;
+    }
+  }
+
+  .navbar-toggler {
+    background-color: transparent;
+    border: none;
+    outline: none;
+
+    &:not(.inside) {
+      color: ltco_color('white');
+      display: flex;
+      align-items: center;
+      @extend %hover;
+
+      *:first-child {
+        margin-right: 0.5rem;
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    @include media-breakpoint-down(sm) {
+      &:not(.inside) {
+        margin-left: auto;
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      &:not(.inside) {
+        margin-right: auto;
+      }
+    }
+
+    &.inside {
+      background-color: ltco_color('white');
+      position: absolute;
+      display: block;
+      top: 1rem;
+      right: 1rem;
+      font-size: 0;
+      padding: 0.75rem;
+      border-radius: 50%;
+      @include transition($transition-base);
+
+      &:hover {
+        transform: scale(1.1);
+        opacity: .8;
+      }
+
+      > * {
+        width: 1rem;
+        height: 1rem;
+        background-image: escape-svg(url("data:image/svg+xml,<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke='#{ltco_color()}' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' d='M4 4L20 20M4 20L20 4'/></svg>")) !important;
+      }
+    }
+  }
+
+  &__navbar_visible {
+    display: flex;
+    align-items: center;
+
+    a {
+      color: ltco_color('white');
+      @include transition($transition-base);
+      padding: 0.5rem 1rem;
+      @extend %hover;
+
+      @include media-breakpoint-down(md) {
+        padding: 0.5rem;
+      }
+    }
+
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+
+    .divider {
+      background-color: ltco_color('white');
+      width: 1px;
+      height: 16px;
+      display: inline-block;
+      opacity: 0.1;
+    }
+  }
+
+  &__collapse {
+    .navbar-wrapper {
+      background-color: ltco_color();
+      overflow: auto;
+      position: fixed;
+      display: block;
+      top: 0;
+      right: 0;
+      width: 100%;
+      padding-top: 4.5rem;
+      transform: translate3d(100%, 0, 0);
+      transition: all 500ms ease;
+      z-index: 9999;
+      max-width: 500px;
+      max-height: 100%;
+
+      @include media-breakpoint-down(xs) {
+        height: 100vh;
+      }
+    }
+
+    &:before {
+      content: '';
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: fixed;
+      display: block;
+      background-color: rgba(ltco_color(), .5);
+      transition: all 500ms ease;
+      z-index: 9998;
+      cursor: pointer;
+    }
+
+    &.collapsing {
+      transition-property: all;
+
+      &:before {
+        opacity: 0;
+      }
+    }
+
+    &.show {
+      &:before {
+        opacity: 1;
+      }
+
+      .navbar-wrapper {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    & .navbar-wrapper .navbar-nav {
+      background-color: lighten(ltco_color(), 2%);
+
+      .nav-item {
+        text-align: center;
+
+        .nav-link {
+          padding: 0.875rem 1rem;
+          color: ltco_color('white');
+          @include transition($transition-base);
+
+          &:hover {
+            font-weight: 700;
+            background-color: lighten(ltco_color(), 4%);
+            color: ltco_color('white');
+          }
+        }
+
+        &.active .nav-link {
+          font-weight: 700;
+          color: ltco_color('white');
+          background-color: lighten(ltco_color(), 6%);
+        }
+      }
+    }
+
+    .dropdown-menu {
+      background-color: ltco_color('yellow-light');
+    }
+
+    &__footer {
+      display: flex;
+      @extend .p-3;
+      @extend .pb-4;
+      @extend .pt-5;
+
+      .ltco_social {
+        margin: auto;
+
+        > * + * {
+          margin-left: 0.75rem;
+        }
+      }
+    }
+  }
+}
