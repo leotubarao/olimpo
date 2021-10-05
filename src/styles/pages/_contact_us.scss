@@ -1,0 +1,68 @@
+.ltco_contact_us {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 2rem;
+
+  @include media-breakpoint-up(lg) {
+    flex-direction: row;
+    gap: 6rem;
+  }
+
+  &__aside {
+    width: 100%;
+
+    @include media-breakpoint-up(lg) {
+      max-width: 350px;
+    }
+
+    &__nav {
+      background-color: ltco_color('gray-100');
+      border: 1px solid ltco_color('gray-500');
+      padding: 2rem;
+
+      ul {
+        list-style: none;
+        margin-bottom: 0;
+        padding-left: 0;
+
+        li {
+          & a:hover:after,
+          &.active a:after {
+            width: calc(100% + 2rem);
+          }
+
+          & + * {
+            margin-top: 0.5rem;
+          }
+
+          a {
+            color: ltco_color('gray-700');
+            padding: 1rem;
+            position: relative;
+            display: block;
+
+            &:after {
+              content: '';
+              background-color: ltco_color('yellow');
+              width: 0;
+              height: 1px;
+              position: absolute;
+              bottom: 0;
+              left: 1rem;
+              transition: all 200ms ease-in-out;
+              pointer-events: none;
+            }
+
+            &:hover {
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__form {
+    flex: 1;
+  }
+}
