@@ -61,3 +61,36 @@
     }
   }
 }
+
+%triadeWrapper {
+  .row-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+
+    @include media-breakpoint-up(xl) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    @include media-breakpoint-down(lg) {
+      > * {
+        max-width: calc(50% - 0.5rem);
+      }
+    }
+  }
+
+  .splide {
+    padding: 0 3rem !important;
+
+    @include media-breakpoint-up(lg) {
+      display: none;
+    }
+  }
+}

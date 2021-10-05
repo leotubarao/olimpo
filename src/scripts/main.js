@@ -116,7 +116,7 @@ const splideLoop = [
     }
   },
   {
-    id: '#business_slide',
+    id: '#triade_slide',
     options: {
       type: 'loop',
       perPage: 1,

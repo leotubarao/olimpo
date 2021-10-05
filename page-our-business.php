@@ -45,27 +45,10 @@
           <?php endforeach; ?>
         </div>
 
-        <div id="business_slide" class="splide padding">
+        <div id="triade_slide" class="splide padding">
           <div class="splide__track">
             <ul class="splide__list">
-              <?php
-                $content = [
-                  [
-                    'icon' => 'icon-point-global',
-                    'title' => 'Gestão de ativos imobilários'
-                  ],
-                  [
-                    'icon' => 'icon-shake-hands',
-                    'title' => 'Financial'
-                  ],
-                  [
-                    'icon' => 'icon-get-key',
-                    'title' => 'Incorporação e venda'
-                  ],
-                ];
-
-                foreach ($content as $item) :
-              ?>
+              <?php foreach ($content as $item) : ?>
 
               <li class="splide__slide ltco_our_business__triade__item">
                 <img src="<?= ltco_path('svgs'); ?>/<?= $item['icon'] ?>.svg" alt="<?= $item['icon'] ?>">
@@ -76,7 +59,6 @@
               </li>
 
               <?php endforeach; ?>
-
             </ul>
           </div>
         </div>

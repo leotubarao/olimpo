@@ -1,16 +1,18 @@
 .splide {
-  /* &__arrow {
-    &--next {
-      right: 0;
-    }
-
-    &--prev {
-      left: 0;
-    }
-  } */
+  $this: &;
 
   &.padding {
     padding: 1rem 2em;
+
+    #{$this}__arrow {
+      &--next {
+        right: 0;
+      }
+
+      &--prev {
+        left: 0;
+      }
+    }
   }
 
   &__list {
