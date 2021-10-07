@@ -8,6 +8,7 @@
 $ltco_primary: #163528;
 $ltco_secondary: #caae42;
 
+$ltco_primary_dark: #0D1D17;
 $ltco_light: #ffe47c;
 $ltco_dark: #716021;
 
@@ -25,6 +26,7 @@ $ltco-colors: map-merge(
   (
   "white": #FFF,
   "green": $ltco_primary,
+  "green-dark": $ltco_primary_dark,
   "yellow": $ltco_secondary,
   "yellow-light": $ltco_light,
   "yellow-dark": $ltco_dark,
