@@ -13,7 +13,7 @@
   border-bottom: 1px solid rgba(ltco_color('white'), .1);
 
   .navbar-brand {
-    @include media-breakpoint-down(xl) {
+    @include media-breakpoint-down(md) {
       margin-right: 0;
 
       img {
@@ -31,52 +31,35 @@
     border: none;
     outline: none;
 
-    &:not(.inside) {
-      color: ltco_color('white');
-      display: flex;
-      align-items: center;
-      @extend %hover;
+    color: ltco_color('white');
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 9999;
 
-      *:first-child {
-        margin-right: 0.5rem;
-        width: 30px;
-        height: 30px;
-      }
+    height: 85px;
+    margin: -1rem 0;
+
+    @include transition($transition-base);
+    @extend %hover;
+
+    *:first-child {
+      margin-right: 0.5rem;
+      width: 30px;
+      height: 30px;
     }
 
     @include media-breakpoint-down(sm) {
-      &:not(.inside) {
-        margin-left: auto;
-      }
+      margin-left: auto;
     }
 
     @include media-breakpoint-up(md) {
-      &:not(.inside) {
-        margin-right: auto;
-      }
+      margin-right: auto;
+      width: 160px;
     }
 
-    &.inside {
-      background-color: ltco_color('white');
-      position: absolute;
-      display: block;
-      top: 1rem;
-      right: 1rem;
-      font-size: 0;
-      padding: 0.75rem;
-      border-radius: 50%;
-      @include transition($transition-base);
-
-      &:hover {
-        transform: scale(1.1);
-        opacity: .8;
-      }
-
-      > * {
-        width: 1rem;
-        height: 1rem;
-        background-image: escape-svg(url("data:image/svg+xml,<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke='#{ltco_color()}' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' d='M4 4L20 20M4 20L20 4'/></svg>")) !important;
-      }
+    &[aria-expanded="true"] {
+      background-color: ltco_color('green-dark');
     }
   }
 
@@ -86,8 +69,8 @@
 
     a {
       color: ltco_color('white');
-      @include transition($transition-base);
       padding: 0.5rem 1rem;
+      @include transition($transition-base);
       @extend %hover;
 
       @include media-breakpoint-down(md) {
@@ -110,19 +93,24 @@
 
   &__collapse {
     .navbar-wrapper {
-      background-color: ltco_color();
+      background-color: ltco_color('green-dark');
       overflow: auto;
       position: fixed;
       display: block;
-      top: 0;
-      right: 0;
+      top: 86px;
+      left: 0;
       width: 100%;
-      padding-top: 4.5rem;
-      transform: translate3d(100%, 0, 0);
+      transform: translate3d(-100%, 0, 0);
       transition: all 500ms ease;
       z-index: 9999;
-      max-width: 500px;
       max-height: 100%;
+      @extend .pt-5;
+
+      @include media-breakpoint-up(sm) {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-rows: auto 1fr;
+      }
 
       @include media-breakpoint-down(xs) {
         height: 100vh;
@@ -161,21 +149,23 @@
       }
     }
 
-    & .navbar-wrapper .navbar-nav {
-      background-color: lighten(ltco_color(), 2%);
+    & .navbar-wrapper .nav {
+      flex-direction: column;
+
+      @include media-breakpoint-up(sm) {
+        grid-column: 2 / -1;
+        margin-right: 2rem;
+      }
 
       .nav-item {
-        text-align: center;
-
         .nav-link {
-          padding: 0.875rem 1rem;
-          color: ltco_color('white');
+          padding: 0.4rem 1rem;
+          color: ltco_color('yellow');
+          font-weight: 700;
           @include transition($transition-base);
 
           &:hover {
-            font-weight: 700;
-            background-color: lighten(ltco_color(), 4%);
-            color: ltco_color('white');
+            color: ltco_color('yellow');
           }
         }
 
@@ -192,17 +182,16 @@
     }
 
     &__footer {
-      display: flex;
       @extend .p-3;
       @extend .pb-4;
-      @extend .pt-5;
+      @extend .py-4;
 
-      .ltco_social {
-        margin: auto;
+      @include media-breakpoint-up(sm) {
+        grid-column: 2 / -1;
+      }
 
-        > * + * {
-          margin-left: 0.75rem;
-        }
+      .ltco_social > * + * {
+        margin-left: 0.75rem;
       }
     }
   }
