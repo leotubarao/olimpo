@@ -13,13 +13,17 @@
     <section id="about" class="ltco_enterprise__about <?= $className; ?>">
       <ul class="ltco_enterprise__about__list">
         <?php
-          $about_differentials = [
-            'icon-car' => '2 vagas',
-            'icon-shower' => '2 banheiros',
-            'icon-ruler' => '75m²'
+          $featured_differentials = [
+            'icon-car' => 'ltco_enterprise__featured_differentials__car',
+            'icon-shower' => 'ltco_enterprise__featured_differentials__shower',
+            'icon-ruler' => 'ltco_enterprise__featured_differentials__ruler'
           ];
 
-          foreach ($about_differentials as $icon => $desc) :
+          foreach ( $featured_differentials as $icon => $field ) :
+            $desc = get_field( $field );
+
+            if ( !$desc ) continue;
+
             echo sprintf(
               '<li>%s%s</li>',
               sprintf(
