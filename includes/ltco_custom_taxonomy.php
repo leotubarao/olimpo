@@ -39,7 +39,7 @@ function city_taxonomy() {
     'show_in_nav_menus'          => false,
     'show_tagcloud'              => false,
     'rewrite'                    => $rewrite,
-    'show_in_rest'               => true
+    'show_in_rest'               => false
   );
 
   register_taxonomy( 'city', array( 'enterprise' ), $args );
@@ -79,7 +79,7 @@ function differential_taxonomy() {
     'show_in_nav_menus'          => false,
     'show_tagcloud'              => false,
     'rewrite'                    => false,
-    'show_in_rest'               => true
+    'show_in_rest'               => false
   );
 
   register_taxonomy( 'differential', array( 'enterprise' ), $args );
@@ -119,7 +119,7 @@ function property_type_taxonomy() {
     'show_in_nav_menus'          => false,
     'show_tagcloud'              => false,
     'rewrite'                    => false,
-    'show_in_rest'               => true
+    'show_in_rest'               => false
   );
 
   register_taxonomy( 'property-type', array( 'enterprise' ), $args );
