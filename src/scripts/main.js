@@ -133,3 +133,27 @@ splideLoop.forEach(item => {
 
   if (!!findSlide) new Splide( item.id, item.options ).mount();
 });
+
+function ltcoSizeMenu(event) {
+  const button = document.querySelector('.ltco_navbar_header .navbar-toggler');
+  const nav = document.querySelector('#navbarHeader .navbar-wrapper');
+  const header = document.querySelector('header.header');
+
+  const {
+    offsetWidth: buttonWidth,
+    offsetHeight: buttonHeight,
+    offsetLeft: buttonLeft
+  } = button;
+
+  const { offsetHeight: headerHeight } = header;
+
+  nav.style.width = `${buttonLeft + buttonWidth}px`;
+  nav.style.minHeight = `${headerHeight - buttonHeight - 1}px`;
+
+  window.removeEventListener(event, ltcoSizeMenu);
+}
+
+
+['load', 'resize'].forEach(event => {
+  window.addEventListener(event, () => ltcoSizeMenu(event));
+});

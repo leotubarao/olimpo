@@ -33,25 +33,13 @@
       id="navbarHeader"
     >
       <div class="navbar-wrapper">
-        <button
-          class="navbar-toggler inside"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarHeader"
-          aria-controls="navbarHeader"
-          aria-expanded="false"
-          aria-label="Fechar navegação"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
         <?php
           wp_nav_menu(
             array(
               'theme_location'  => 'header',
               'depth'           => 2,
               'container'       => '',
-              'menu_class'      => 'navbar-nav ltco_navbar_header__collapse__navbar',
+              'menu_class'      => 'nav ltco_navbar_header__collapse__navbar',
               'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
               'walker'          => new WP_Bootstrap_Navwalker()
             )
