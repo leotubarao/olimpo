@@ -45,10 +45,16 @@
         <?= styleInline(ltco_image_wp(28)); ?>
       ></figure>
 
-      <div class="ltco_enterprise__about__content">
-        <h3 class="text-primary">Um novo conceito de apartamento studio na melhor localização de Campinas.</h3>
-        <p>Blue House Campinas é um empreendimento ideal para quem busca praticidade. Apartamento studio, perto de tudo que você precisa para o dia a dia e um excelente investimento.</p>
-      </div>
+      <?php
+        $content = get_the_content();
+
+        if ( $content ) {
+          echo sprintf(
+            '<div class="ltco_enterprise__about__content">%s</div>',
+            $content
+          );
+        }
+      ?>
     </section>
 
     <section id="differentials" class="ltco_enterprise__differential">
