@@ -14,28 +14,28 @@
       <ul class="ltco_enterprise__about__list">
         <?php
           $featured_differentials = [
-            'icon-car' => 'ltco_enterprise__featured_differentials__car',
-            'icon-shower' => 'ltco_enterprise__featured_differentials__shower',
-            'icon-ruler' => 'ltco_enterprise__featured_differentials__ruler'
+            'icon-car' => 'ltco_enterprise__car_space',
+            'icon-shower' => 'ltco_enterprise__bathroom',
+            'icon-ruler' => 'ltco_enterprise__footage'
           ];
 
           foreach ( $featured_differentials as $icon => $field ) :
             $desc = get_field( $field );
 
-            if ( !$desc ) continue;
-
-            echo sprintf(
-              '<li>%s%s</li>',
-              sprintf(
-                '<img src="%s" class="image img-fluid" alt="%s"/>',
-                ltco_path('svgs')."/$icon.svg",
-                $desc
-              ),
-              sprintf(
-                '<span class="description">%s</span>',
-                $desc
-              )
-            );
+            if ( $desc ) {
+              echo sprintf(
+                '<li>%s%s</li>',
+                sprintf(
+                  '<img src="%s" class="image img-fluid" alt="%s"/>',
+                  ltco_path('svgs')."/$icon.svg",
+                  $desc
+                ),
+                sprintf(
+                  '<span class="description">%s</span>',
+                  $desc
+                )
+              );
+            }
           endforeach;
         ?>
       </ul>
