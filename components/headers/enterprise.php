@@ -1,5 +1,5 @@
 <header
-  class="header enterprise <?= ltco_has_thumbs( get_the_ID() ); ?>"
+  <?= ltco_enterprise_classes( 'header enterprise' ); ?>
   <?= ltco_thumbnail_post( get_the_ID() ); ?>
 >
   <div class="container">
