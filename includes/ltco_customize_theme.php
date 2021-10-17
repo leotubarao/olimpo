@@ -144,12 +144,3 @@ if ( function_exists('acf_add_local_field_group') ) {
     'description' => '',
   ));
 }
-
-function ltco_acf_show_admin(){
-  global $current_user;
-
-  if ( $current_user->user_login != 'ltco' ) {
-    remove_menu_page( 'edit.php?post_type=acf-field-group' );
-  }
-}
-add_action( 'admin_menu', 'ltco_acf_show_admin', 100 );
