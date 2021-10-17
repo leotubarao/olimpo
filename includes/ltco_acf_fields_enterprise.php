@@ -34,7 +34,7 @@ if ( function_exists( 'acf_add_local_field_group' ) ) :
           'id' => '',
         ),
         'message' => '',
-        'default_value' => 0,
+        'default_value' => 1,
         'ui' => 1,
         'ui_on_text' => '',
         'ui_off_text' => '',
