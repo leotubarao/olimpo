@@ -11,7 +11,7 @@
     grid-column: 1 / -1;
   }
 
-  &:not(.home):not(.no-thumbs):before {
+  &:not(.home):not(.no-thumbs):not(.no-bg-color):before {
     content: '';
     background-color: ltco_color();
     position: absolute;
