@@ -1,7 +1,3 @@
-<?php
-  $ltco_maps_iframe = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3687.5749373088693!2d-46.93980878504266!3d-22.445019085248525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8f90b9a73dc0d%3A0xdff51b0e5fa3b8b4!2sAv.%20Expedito%20Quartieri%2C%201300%20-%20Jardim%20Helena%2C%20Mogi%20Mirim%20-%20SP%2C%2013801-156!5e0!3m2!1spt-BR!2sbr!4v1632045684757!5m2!1spt-BR!2sbr';
-?>
-
 <?php get_header(); ?>
 <?php $className = 'container ltco-py-2 ltco-py-md-4 ltco-py-lg-6'; ?>
 
@@ -11,13 +7,23 @@
     <?php get_template_part( 'components/navs/enterprise' ); ?>
 
     <section id="about" class="ltco_enterprise__about <?= $className; ?>">
-      <ul class="ltco_enterprise__about__list">
-        <?php
-          $featured_differentials = [
-            'icon-car' => 'ltco_enterprise__car_space',
-            'icon-shower' => 'ltco_enterprise__bathroom',
-            'icon-ruler' => 'ltco_enterprise__footage'
-          ];
+      <?php
+        $featured_differentials = [
+          'icon-car' => 'ltco_enterprise__car_space',
+          'icon-shower' => 'ltco_enterprise__bathroom',
+          'icon-ruler' => 'ltco_enterprise__footage'
+        ];
+
+        $featured_differentials__condition = false;
+
+
+        foreach ( $featured_differentials as $icon => $field ) {
+          if ( get_field( $field ) ) $featured_differentials__condition = true;
+        }
+
+        if ($featured_differentials__condition) :
+
+          echo '<ul class="ltco_enterprise__about__list">';
 
           foreach ( $featured_differentials as $icon => $field ) :
             $desc = get_field( $field );
@@ -37,15 +43,20 @@
               );
             }
           endforeach;
-        ?>
-      </ul>
 
-      <figure
-        class="ltco_enterprise__about__image"
-        <?= styleInline(ltco_image_wp(28)); ?>
-      ></figure>
+          echo '</ul>';
 
-      <?php
+        endif;
+
+        $resume_image = get_field( 'ltco_enterprise__resume_image' );
+
+        if ( $resume_image ) {
+          echo sprintf(
+            '<figure class="ltco_enterprise__about__image" %s></figure>',
+            styleInline($resume_image['url']),
+          );
+        }
+
         $content = get_the_content();
 
         if ( $content ) {
@@ -57,6 +68,13 @@
       ?>
     </section>
 
+    <?php
+      $ltco_differentials = get_field( 'ltco_enterprise__differential' );
+
+      if ( !$ltco_differentials ) echo '<hr/>';
+
+      if ( $ltco_differentials ) :
+    ?>
     <section id="differentials" class="ltco_enterprise__differential">
       <div class="<?= $className; ?>">
         <div class="ltco_enterprise__location__content">
@@ -64,26 +82,24 @@
         </div>
 
         <div class="ltco_enterprise__differential__slide">
-          <div id="differential_slide" class="splide padding">
+          <div id="differential_slide" class="splide padding" data-lenght="<?= count($ltco_differentials); ?>">
             <div class="splide__track">
               <ul class="splide__list">
                 <?php
-                  $i = 0;
-                  while ($i < 5) :
+                  foreach ( $ltco_differentials as $item ) :
                     echo sprintf(
                       '<li class="splide__slide d-flex flex-column align-items-center">%s%s</li>',
                       sprintf(
                         '<img src="%s" class="image img-fluid mb-2" alt="%s"/>',
                         ltco_path('svgs').'/icon-swimming.svg',
-                        $i
+                        $item->name
                       ),
                       sprintf(
                         '<span class="d-block text-center description">%s</span>',
-                        'Piscina quente'
+                        $item->name
                       )
                     );
-                  $i++;
-                  endwhile;
+                  endforeach;
                 ?>
               </ul>
             </div>
@@ -92,49 +108,69 @@
       </div>
     </section>
 
+    <?php endif; ?>
+
+    <?php
+      $ltco_maps = ltco_the_field('ltco_enterprise__maps');
+
+      if ( $ltco_maps ) :
+    ?>
+
     <section id="location" class="ltco_enterprise__location <?= $className; ?>">
       <div class="ltco_enterprise__location__content">
         <h2 class="text-primary mb-4">Localização</h2>
         <address>
-          Av. Expedito Quartieri, 1300<br/>
-          Jardim Helena<br/>
-          Mogi Mirim - SP
+          <?= ltco_the_field('ltco_enterprise__location'); ?>
         </address>
       </div>
-      <?= ltco_maps( $ltco_maps_iframe ); ?>
+      <?= ltco_maps( $ltco_maps ); ?>
     </section>
 
+    <?php endif; ?>
+
+    <?php
+      $gallery = 'ltco_enterprise__gallery';
+
+      if ( have_rows( $gallery ) ) :
+    ?>
     <section id="gallery" class="ltco_enterprise__gallery">
       <div id="gallery_slide" class="splide">
         <div class="splide__track">
           <ul class="splide__list">
             <?php
-              $i = 0;
-              $caption = sprintf(
-                '<div class="ltco_enterprise__gallery__image__description">%s</div>',
-                sprintf(
-                  '<div class="container">%s</div>',
-                  'Piscina quente'
-                )
-              );
+              while( have_rows( $gallery ) ) : the_row();
+                $title = ltco_the_field( $gallery.'__title', 'sub' );
+                $image = get_sub_field( $gallery.'__image' );
 
-              while ($i < 5) :
+                $caption = sprintf(
+                  '<div class="ltco_enterprise__gallery__image__description">%s</div>',
+                  sprintf(
+                    '<div class="container">%s</div>',
+                    $title
+                  )
+                );
+
                 echo sprintf(
                   '<li class="splide__slide">%s</li>',
                   sprintf(
                     '<figure class="ltco_enterprise__gallery__image" %s>%s</figure>',
-                    styleInline(ltco_image_wp(28)),
+                    styleInline($image['url']),
                     $caption
                   )
                 );
-              $i++;
               endwhile;
             ?>
           </ul>
         </div>
       </div>
     </section>
+    <?php endif; ?>
 
+    <?php
+      $humanized_project = 'ltco_enterprise__humanized_project';
+
+      if ( have_rows( $humanized_project ) ) :
+    ?>
     <section id="humanized-project" class="ltco_enterprise__humanized_project">
       <div class="<?= $className; ?>">
         <div class="ltco_enterprise__humanized_project__wrapper">
@@ -142,16 +178,17 @@
             <div class="splide__track">
               <ul class="splide__list">
                 <?php
-                  $i = 0;
-                  while ($i < 5) :
+                  while( have_rows( $humanized_project ) ) : the_row();
+                    $image = get_sub_field( $humanized_project.'__image' );
+
                     echo sprintf(
                       '<li class="splide__slide">%s</li>',
                       sprintf(
                         '<figure class="ltco_enterprise__humanized_project__image" %s></figure>',
-                        styleInline(ltco_image_wp(28))
+                        styleInline($image['url']),
                       )
                     );
-                  $i++;
+
                   endwhile;
                 ?>
               </ul>
@@ -160,6 +197,7 @@
         </div>
       </div>
     </section>
+    <?php endif; ?>
 
     <section id="work-stage" class="ltco_enterprise__work_stage">
       <div class="<?= $className; ?>">
@@ -167,16 +205,11 @@
 
         <ul>
           <?php
-            $work_stage = [
-              'Andamento geral' => 49,
-              'Fundação' => 100,
-              'Estrutura' => 79,
-              'Alvenaria' => 50,
-              'Acabamento' => 40,
-              'Área comum' => 20
-            ];
+            $work_stage = ltco_the_field('ltco_enterprise__work_stage');
 
-            foreach ( $work_stage as $label => $percentage ) :
+            foreach ( $work_stage as $item ) :
+              $label = $item['ltco_enterprise__work_stage__title'];
+              $percentage = $item['ltco_enterprise__work_stage__percents'];
           ?>
 
           <li>
@@ -193,7 +226,16 @@
 
           <?php endforeach; ?>
         </ul>
-        <p class="mb-0">Atualizado em 15/06/2021</p>
+        <?php
+          $updateDate = ltco_the_field('ltco_enterprise__work_stage__update_date');
+
+          if ( $updateDate ) {
+            echo sprintf(
+              '<p class="mb-0">Atualizado em %s</p>',
+              $updateDate
+            );
+          }
+        ?>
       </div>
     </section>
   </article>
