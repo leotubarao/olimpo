@@ -14,6 +14,8 @@ require_once('ltco_title.php');
 
 require_once('ltco_scripts_theme.php');
 
+require_once('ltco_acf_functions.php');
+
 require_once('ltco_customize_theme.php');
 
 require_once('ltco_footer_functions.php');

@@ -29,4 +29,4 @@ function ltco_loop_start_post_view() {
   if ( is_singular('enterprise') ) ltco_set_post_view();
 }
 
-// add_action( 'loop_start', 'ltco_loop_start_post_view' );
+add_action( 'loop_start', 'ltco_loop_start_post_view' );

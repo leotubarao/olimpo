@@ -18,7 +18,7 @@ function ltco_login_redirect($redirect_to, $requested_redirect_to, $user) {
   }
 }
 
-add_filter('login_redirect', 'ltco_login_redirect', 10, 3);
+// add_filter('login_redirect', 'ltco_login_redirect', 10, 3);
 
 function ltco_form_alert( $status = null, $message = null ) {
   $status = ( empty( $status ) ) ? 'danger' : $status;
