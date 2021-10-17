@@ -7,7 +7,7 @@ function ltco_select_filter( $param, $firstLabel ) {
   $terms = get_terms(
     $param,
     array(
-      'hide_empty' => 0,
+      'hide_empty' => 1,
       'order' => 'ASC',
       'orderby' => 'name'
     )
