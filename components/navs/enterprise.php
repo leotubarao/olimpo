@@ -14,13 +14,13 @@
         ];
 
         foreach ( $links_enterprises as $anchorLink => $label ) :
-          /* switch ( $anchorLink ) {
+          switch ( $anchorLink ) {
             case '#about':
               $condition_link = get_the_content();
               break;
 
             case '#differentials':
-              $condition_link = !empty( get_field( 'ltco_enterprise__differentials' ) );
+              $condition_link = !empty( get_field( 'ltco_enterprise__differential' ) );
               break;
 
             case '#location':
@@ -38,8 +38,7 @@
             case '#work-stage':
               $condition_link = have_rows( 'ltco_enterprise__work_stage' );
               break;
-          } */
-          $condition_link = true;
+          }
 
           if ( $condition_link ) {
             echo sprintf(
