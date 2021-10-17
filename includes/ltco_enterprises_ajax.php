@@ -53,11 +53,10 @@ function ltco_ajax_handler() {
 add_action('wp_ajax_ltco_enterprises', 'ltco_ajax_handler');
 add_action('wp_ajax_nopriv_ltco_enterprises', 'ltco_ajax_handler');
 
-
 function ltco_enterprise_query() {
   $args = array(
     'post_type' => 'enterprise',
-    'order' => 'ASC',
+    'order' => 'DESC',
     'orderby' => 'menu_order',
     'post_status' => 'publish',
     'showposts' => -1
@@ -69,6 +68,7 @@ function ltco_enterprise_query() {
     $value = explode(',', $_GET[ $params ]);
 
     if ( $params === 'city' ) {
+      $args['order'] = 'ASC';
       $args['tax_query'][] = array(
         'taxonomy' => $params,
         'field' => 'slug',
@@ -78,10 +78,14 @@ function ltco_enterprise_query() {
       continue;
     }
 
-    $args['meta_query'][] = array(
-      'key' => $params,
-      'value' => $value
-    );
+    if ( $params === 'most-recent' && $value ) $args['orderby'] = 'date';
+
+    if ( $params === 'most-seen' && $value ) {
+      $args['orderby'] = 'meta_value_num';
+      $args['meta_query'][] = array(
+        'key' => 'post_views_count'
+      );
+    }
   }
 
   return $args;
