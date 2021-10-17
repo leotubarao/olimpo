@@ -1,4 +1,4 @@
-<div id="carouselHome" class="carousel slide <?php /*carousel-fade */ ?>" data-ride="carousel">
+<div id="carouselHome" class="carousel slide carousel-fade" data-ride="carousel">
   <div class="carousel-inner">
 
     <?php
