@@ -5,9 +5,8 @@
       $i = 0;
       $enterprises_query = new WP_Query(['post_type' => 'enterprise']);
 
-      while ($i < 3) :
-      $cond = $i === 0;
       while ($enterprises_query->have_posts()) : $enterprises_query->the_post();
+      $cond = $i === 0;
     ?>
 
     <div class="carousel-item  <?= ltco_condition($cond, 'active'); ?>">
@@ -19,7 +18,6 @@
     </div>
 
     <?php
-      endwhile;
       $i++;
       endwhile;
     ?>
