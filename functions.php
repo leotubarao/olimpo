@@ -40,6 +40,18 @@ function _ltco( $value = null ) {
 
 /*=====  End of Debug PHP  ======*/
 
+/*==================================
+=            Upload SVG            =
+==================================*/
+
+function cc_mime_types($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');
+
+/*=====  End of Upload SVG  ======*/
+
 function ltco_query_posts( $query ) {
   if ( $query->is_main_query() )
     $query->set( 'ignore_sticky_posts', true );
