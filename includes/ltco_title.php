@@ -14,6 +14,10 @@ function ltco_title() {
   return get_the_title();
 }
 
-function the_title_enterprise( $content ) {
-  return implode(' - ', [get_the_title(), $content]);
+function the_title_enterprise( $content = null ) {
+  $title = get_the_title();
+
+  if ( $content ) return implode(' - ', [get_the_title(), $content]);
+
+  return $title;
 }

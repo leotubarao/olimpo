@@ -13,7 +13,9 @@
       <figure class="carousel-image" <?= ltco_thumbnail_post( get_the_ID() ); ?>></figure>
 
       <a href="<?php the_permalink(); ?>" class="carousel-caption stretched-link">
-        <p><?= the_title_enterprise($i) ?></p>
+        <p>
+          <?= the_title_enterprise(get_the_terms(get_the_ID(), 'city')[0]->name) ?>
+        </p>
       </a>
     </div>
 
