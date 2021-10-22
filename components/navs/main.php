@@ -24,8 +24,21 @@
     <div class="ltco_navbar_header__navbar_visible">
       <span class="ltco_golden_icon small"></span>
       <a href="<?= esc_url( home_url( 'empreendimentos' ) ); ?>">Empreendimentos</a>
-      <span class="ltco_golden_icon small"></span>
-      <a href="<?= esc_url( home_url( 'login' ) ); ?>" class="ltco_icon_signin">Portal do Cliente</a>
+      <?php
+        $customer_portal = get_field( 'ltco_customer_portal__link' );
+
+        if ( $customer_portal ) {
+          echo sprintf(
+            '%s%s',
+            '<span class="ltco_golden_icon small"></span>',
+            sprintf(
+              '<a href="%s" class="ltco_icon_signin">%s</a>',
+              esc_url( $customer_portal ),
+              'Portal do Cliente'
+            )
+          );
+        }
+      ?>
     </div>
 
     <div
