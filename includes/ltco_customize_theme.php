@@ -16,8 +16,9 @@ if ( function_exists('acf_add_options_page') ) {
   ) );
 
   acf_add_options_sub_page( array(
-    'page_title'	=> 'Imagens do Cabeçalho',
-    'menu_title'	=> 'Imagens do Cabeçalho',
+    'page_title'	=> 'Outros',
+    'menu_title'	=> 'Outros',
+    'menu_slug'   => 'ltco-others',
     'parent_slug'	=> 'ltco-settings',
   ) );
 }
@@ -25,14 +26,14 @@ if ( function_exists('acf_add_options_page') ) {
 if ( function_exists('acf_add_local_field_group') ) {
 
   acf_add_local_field_group(array(
-    'key' => 'group_5d82933aa37bd',
+    'key' => 'ltco_cutomer_portal',
     'title' => 'Imagens do Cabeçalho',
     'fields' => array(
       array(
-        'key' => 'field_ltco_banners__search',
-        'label' => 'Imagem destacada da Página de Busca',
-        'name' => 'ltco_banners__search',
-        'type' => 'image',
+        'key' => 'ltco_cutomer_portal__link',
+        'label' => 'Link do portal do cliente',
+        'name' => 'ltco_cutomer_portal__link',
+        'type' => 'url',
         'instructions' => '',
         'required' => 0,
         'conditional_logic' => 0,
@@ -41,16 +42,8 @@ if ( function_exists('acf_add_local_field_group') ) {
           'class' => '',
           'id' => '',
         ),
-        'return_format' => 'url',
-        'preview_size' => 'medium',
-        'library' => 'all',
-        'min_width' => '',
-        'min_height' => '',
-        'min_size' => '',
-        'max_width' => '',
-        'max_height' => '',
-        'max_size' => '',
-        'mime_types' => '',
+        'default_value' => '',
+        'placeholder' => '',
       ),
     ),
     'location' => array(
@@ -58,7 +51,7 @@ if ( function_exists('acf_add_local_field_group') ) {
         array(
           'param' => 'options_page',
           'operator' => '==',
-          'value' => 'acf-options-imagens-do-cabecalho',
+          'value' => 'ltco-others',
         ),
       ),
     ),
