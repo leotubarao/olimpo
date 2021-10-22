@@ -30,9 +30,9 @@ if ( function_exists('acf_add_local_field_group') ) {
     'title' => 'Imagens do Cabeçalho',
     'fields' => array(
       array(
-        'key' => 'ltco_cutomer_portal__link',
+        'key' => 'ltco_customer_portal__link',
         'label' => 'Link do portal do cliente',
-        'name' => 'ltco_cutomer_portal__link',
+        'name' => 'ltco_customer_portal__link',
         'type' => 'url',
         'instructions' => '',
         'required' => 0,
