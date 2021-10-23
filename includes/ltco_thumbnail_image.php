@@ -30,7 +30,13 @@ function ltco_thumbnail_post( $params = null ) {
 }
 
 function ltco_has_thumbs( $id = null ) {
-  if ( !has_post_thumbnail( $id ) ) return 'no-thumbs';
+  $class = 'no-thumbs';
+  $heroImage = 'ltco_enterprise__hero_image';
+  $conditionEnterprise = is_single( 'enterprise' ) && get_field( $heroImage );
+
+  if ( !$conditionEnterprise ) return $class;
+
+  if ( !has_post_thumbnail( $id ) ) return $class;
 }
 
 function ltco_has_overlay() {
