@@ -87,11 +87,16 @@
               <ul class="splide__list">
                 <?php
                   foreach ( $ltco_differentials as $item ) :
+                    $termId = 'term_'.$item->term_id;
+                    $icon = get_field('ltco_differentials__icon', $termId);
+
+                    if ( !$icon ) continue;
+
                     echo sprintf(
                       '<li class="splide__slide d-flex flex-column align-items-center">%s%s</li>',
                       sprintf(
-                        '<img src="%s" class="image img-fluid mb-2" alt="%s"/>',
-                        ltco_path('svgs').'/icon-swimming.svg',
+                        '<img src="%s" class="image img-fluid mb-2" width="90" alt="%s"/>',
+                        $icon['url'],
                         $item->name
                       ),
                       sprintf(
