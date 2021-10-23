@@ -14,7 +14,12 @@ function styleInline( $image ) {
 }
 
 function ltco_thumbnail_image( $id = null ) {
-  if ( has_post_thumbnail( $id ) ) return get_the_post_thumbnail_url( $id, 'full' );
+  $heroImage = get_field( 'ltco_enterprise__hero_image' );
+
+  if ( is_singular( 'enterprise' ) ) return $$heroImage['url'];
+
+  if ( has_post_thumbnail( $id ) )
+    return get_the_post_thumbnail_url( $id, 'full' );
 }
 
 function ltco_thumbnail_post( $params = null ) {
@@ -31,10 +36,9 @@ function ltco_thumbnail_post( $params = null ) {
 
 function ltco_has_thumbs( $id = null ) {
   $class = 'no-thumbs';
-  $heroImage = 'ltco_enterprise__hero_image';
-  $conditionEnterprise = is_single( 'enterprise' ) && get_field( $heroImage );
+  $heroImage = get_field( 'ltco_enterprise__hero_image' );
 
-  if ( !$conditionEnterprise ) return $class;
+  if ( is_singular( 'enterprise' ) && !$heroImage ) return $class;
 
   if ( !has_post_thumbnail( $id ) ) return $class;
 }
