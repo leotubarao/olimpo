@@ -16,7 +16,7 @@ function styleInline( $image ) {
 function ltco_thumbnail_image( $id = null ) {
   $heroImage = get_field( 'ltco_enterprise__hero_image' );
 
-  if ( is_singular( 'enterprise' ) ) return $$heroImage['url'];
+  if ( is_singular( 'enterprise' ) ) return $heroImage['url'];
 
   if ( has_post_thumbnail( $id ) )
     return get_the_post_thumbnail_url( $id, 'full' );
