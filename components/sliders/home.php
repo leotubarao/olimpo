@@ -3,7 +3,10 @@
 
     <?php
       $i = 0;
-      $enterprises_query = new WP_Query(['post_type' => 'enterprise']);
+      $enterprises_query = new WP_Query([
+        'post_type' => 'enterprise',
+        'showposts' => 3
+      ]);
 
       while ($enterprises_query->have_posts()) : $enterprises_query->the_post();
       $cond = $i === 0;
