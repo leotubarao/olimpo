@@ -127,7 +127,7 @@ function property_type_taxonomy() {
 
 add_action( 'init', 'city_taxonomy', 0 );
 add_action( 'init', 'differential_taxonomy', 0 );
-add_action( 'init', 'property_type_taxonomy', 0 );
+// add_action( 'init', 'property_type_taxonomy', 0 );
 
 add_action( 'after_switch_theme', function() {
   city_taxonomy();
