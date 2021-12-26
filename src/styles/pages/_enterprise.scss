@@ -32,6 +32,18 @@
       gap: 4rem;
     }
 
+    &.no-features {
+      @include media-breakpoint-up(lg) {
+        grid-template-columns: 40% 1fr;
+      }
+
+      @include media-breakpoint-between(sm, md) {
+        & > [class*="image"] {
+          grid-column: 1 / -1;
+        }
+      }
+    }
+
     &__list {
       list-style: none;
       padding-left: 0;

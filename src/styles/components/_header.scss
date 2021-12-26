@@ -153,7 +153,7 @@
       }
 
       .ltco_form_wrapper {
-        @include media-breakpoint-down(md) {
+        @include media-breakpoint-down(sm) {
           border-top: 1px solid rgba(ltco_color('white'), .3);
           padding-top: 2rem;
         }
@@ -173,6 +173,10 @@
 
           * {
             margin-bottom: 0;
+          }
+
+          [class*="response"] {
+            grid-column: 1 / -1;
           }
 
           .ltco_button {
