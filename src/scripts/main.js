@@ -41,9 +41,12 @@ const brazilianFormatNumberOptions = {
   }
 };
 
-const mask = 'input[name="telefone"], input[name="celular"], input[type="tel"]';
+const maskPhone = 'input[name="telefone"], input[name="celular"], input[type="tel"]';
+const maskCNPJ = 'input[name*="cnpj"], input[class*="cnpj"]';
 
-$(mask).mask(brazilianFormatNumber, brazilianFormatNumberOptions);
+$(maskPhone).mask(brazilianFormatNumber, brazilianFormatNumberOptions);
+
+$(maskCNPJ).mask("99.999.999/9999-99");
 
 function animateScroll( $value = 0 ) {
   $("html, body").animate({
@@ -157,3 +160,46 @@ function ltcoSizeMenu(event) {
 ['load', 'resize'].forEach(event => {
   window.addEventListener(event, () => ltcoSizeMenu(event));
 });
+
+function handleTab(el, initActive = false) {
+  const classActive = 'active';
+
+  const containerTab = document.querySelector(el);
+  const tabButton = containerTab.querySelectorAll('.tab-button');
+  const tabContent = containerTab.querySelectorAll('.tab-content');
+
+  const addActiveClassInFirstChild = () => {
+    [tabButton, tabContent].forEach(tabElement => {
+      tabElement[0].classList.add(classActive);
+    });
+  };
+
+  if (initActive) addActiveClassInFirstChild();
+
+  const removeActiveClass = () => {
+    [tabButton, tabContent].forEach(tabElement => {
+      tabElement.forEach(element => element.classList.remove(classActive));
+    });
+  };
+
+  const handleClickButton = evt => {
+    evt.preventDefault();
+
+    const currentButton = evt.target;
+    const keyTab = currentButton.getAttribute('data-id');
+
+    removeActiveClass();
+    currentButton.classList.add(classActive);
+    containerTab.querySelector(`#${keyTab}`).classList.add(classActive);
+  };
+
+  tabButton.forEach(tab => {
+    tab.addEventListener('click', handleClickButton);
+  });
+}
+
+handleTab('.ltco_contact_us', true);
+
+/* $('.custom-file input[type="file"]').on('click', function () {
+  bsCustomFileInput.init();
+}); */
