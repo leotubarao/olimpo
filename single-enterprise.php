@@ -1,26 +1,29 @@
 <?php get_header(); ?>
-<?php $className = 'container ltco-py-2 ltco-py-md-4 ltco-py-lg-6'; ?>
+<?php
+  $className = 'container ltco-py-2 ltco-py-md-4 ltco-py-lg-6';
+
+  $featured_differentials = [
+    'icon-car' => 'ltco_enterprise__car_space',
+    'icon-shower' => 'ltco_enterprise__bathroom',
+    'icon-ruler' => 'ltco_enterprise__footage'
+  ];
+
+  $featured_differentials__condition = false;
+
+  foreach ( $featured_differentials as $icon => $field ) {
+    if ( get_field( $field ) ) $featured_differentials__condition = true;
+  }
+
+  $features = (!$featured_differentials__condition) ? ' no-features' : '';
+?>
 
   <?php while ( have_posts() ) : the_post(); ?>
 
   <article <?php post_class('ltco_enterprise'); ?>>
     <?php get_template_part( 'components/navs/enterprise' ); ?>
 
-    <section id="about" class="ltco_enterprise__about <?= $className; ?>">
+    <section id="about" class="ltco_enterprise__about <?= $className; ?><?= $features; ?>">
       <?php
-        $featured_differentials = [
-          'icon-car' => 'ltco_enterprise__car_space',
-          'icon-shower' => 'ltco_enterprise__bathroom',
-          'icon-ruler' => 'ltco_enterprise__footage'
-        ];
-
-        $featured_differentials__condition = false;
-
-
-        foreach ( $featured_differentials as $icon => $field ) {
-          if ( get_field( $field ) ) $featured_differentials__condition = true;
-        }
-
         if ($featured_differentials__condition) :
 
           echo '<ul class="ltco_enterprise__about__list">';

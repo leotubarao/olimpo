@@ -17,6 +17,6 @@
         Conheça mais
       </a>
     </div>
-    <?php get_template_part('components/sliders/home'); ?>
+    <?php get_template_part('components/sliders/banner'); ?>
   </div>
 </header>
