@@ -72,6 +72,38 @@ add_shortcode( 'ltco_social_shortcode', 'ltco_social_shortcode' );
 
 /*=====  End of Shortcodes  ======*/
 
+function ltco_wpcf7_elements($content) {
+  $regexSpan = '/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i';
+  // $content = preg_replace($regexSpan, '\2', $content);
+
+  preg_match_all(
+    $regexSpan,
+    $content,
+    $matches
+  );
+
+  foreach($matches[2] as $match) {
+    $content = str_replace(
+      trim($match),
+      trim(
+        preg_replace(
+          $regexSpan,
+          '\2',
+          $match
+        )
+      ),
+      $content
+    );
+  }
+
+
+  $content = str_replace('<br />', '', $content);
+
+  return $content;
+}
+
+// add_filter('wpcf7_form_elements', 'ltco_wpcf7_elements');
+
 /*=======================================
 =            Themes Supports            =
 =======================================*/

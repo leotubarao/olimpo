@@ -7,11 +7,11 @@
 
     <li class="ltco_enterprises__list__item heading">
       <header>
-        <h2 class="text-primary">Lançamentos</h2>
+        <h2 class="text-primary">Empreendimentos</h2>
         <span class="ltco_golden_icon three line"></span>
       </header>
       <p class="mb-0">
-        Confira alguns dos nossos lançamentos e veja qual é o seu estilo de empreendimento.
+        Confira alguns dos nossos empreendimentos e escolhe o melhor para você.
       </p>
     </li>
 

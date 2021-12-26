@@ -19,44 +19,45 @@
       background-color: ltco_color('gray-100');
       border: 1px solid ltco_color('gray-500');
       padding: 2rem;
+      display: flex;
+      flex-direction: column;
 
-      ul {
-        list-style: none;
-        margin-bottom: 0;
-        padding-left: 0;
+      button {
+        background-color: transparent;
+        color: ltco_color('gray-700');
+        padding: 1rem;
+        border: none;
+        position: relative;
+        display: block;
+        text-align: left;
 
-        li {
-          & a:hover:after,
-          &.active a:after {
-            width: calc(100% + 2rem);
-          }
+        & + * {
+          margin-top: 0.5rem;
+        }
 
-          & + * {
-            margin-top: 0.5rem;
-          }
+        &:after {
+          content: '';
+          background-color: ltco_color('yellow');
+          width: 0;
+          height: 1px;
+          position: absolute;
+          bottom: 0;
+          left: 1rem;
+          transition: all 200ms ease-in-out;
+          pointer-events: none;
+        }
 
-          a {
-            color: ltco_color('gray-700');
-            padding: 1rem;
-            position: relative;
-            display: block;
+        &:hover {
+          text-decoration: none;
+        }
 
-            &:after {
-              content: '';
-              background-color: ltco_color('yellow');
-              width: 0;
-              height: 1px;
-              position: absolute;
-              bottom: 0;
-              left: 1rem;
-              transition: all 200ms ease-in-out;
-              pointer-events: none;
-            }
+        &:focus {
+          outline: none;
+        }
 
-            &:hover {
-              text-decoration: none;
-            }
-          }
+        &:hover:after,
+        &.active:after {
+          width: calc(100% + 2rem);
         }
       }
     }

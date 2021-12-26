@@ -15,26 +15,10 @@
 
       <p>Para informações e vendas, cadastre-se que um de nossos corretores irá entrar em contato.</p>
     </div>
-    <div class="ltco_form_wrapper">
-      <p class="h2 text-white">Cadastre-se</p>
+    <div class="ltco_form_wrapper ltco_form">
+      <span class="h2 text-white d-block">Cadastre-se</span>
 
-      <form action="#">
-        <div class="form-group">
-          <label for="name-field">Nome</label>
-          <input type="text" class="form-control" id="name-field">
-        </div>
-        <div class="form-group">
-          <label for="email-field">E-mail</label>
-          <input type="email" class="form-control" id="email-field">
-        </div>
-        <div class="form-group">
-          <label for="phone-field">Telefone</label>
-          <input type="text" class="form-control" id="phone-field">
-        </div>
-        <button type="submit" class="btn btn-secondary ltco_button">
-          Enviar
-        </button>
-      </form>
+      <?php ltco_cf7_shortcode(); ?>
     </div>
     <span class="ltco_icon_arrow_down"></span>
   </div>

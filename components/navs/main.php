@@ -25,7 +25,7 @@
       <span class="ltco_golden_icon small"></span>
       <a href="<?= esc_url( home_url( 'empreendimentos' ) ); ?>">Empreendimentos</a>
       <?php
-        $customer_portal = get_field( 'ltco_customer_portal__link', 'options' );
+        $customer_portal = get_field( 'ltco_links__customer_portal', 'options' );
 
         if ( $customer_portal ) {
           echo sprintf(

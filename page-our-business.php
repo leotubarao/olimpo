@@ -10,24 +10,27 @@
     </div>
 
     <div class="container ltco-py-2 ltco-py-md-4 ltco-py-lg-6">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lobortis egestas ligula id fermentum. Etiam consequat et libero nec rutrum. Nulla non ex vel dolor tristique ultrices sed a justo. Ut non metus venenatis, vehicula odio sed, scelerisque diam. Suspendisse rhoncus bibendum enim, eget imperdiet metus congue quis. Sed et erat tincidunt, maximus metus a, tempus nisi. Morbi aliquam leo at euismod ullamcorper. Phasellus ac nisi sed neque molestie rutrum. Nunc tempor enim ac est suscipit, non malesuada ligula porttitor. Vestibulum pretium pretium libero, ac aliquam urna viverra in. Ut feugiat a diam nec aliquam. Nam quis lacinia sapien, ac imperdiet lectus. Duis id odio quam.</p>
-      <p>In dictum eros a massa dignissim finibus. Vivamus cursus at mauris sit amet ultricies. Suspendisse vitae bibendum nulla, at lacinia libero. Etiam vestibulum porttitor ex, id aliquam dui tincidunt id. Ut sollicitudin suscipit dolor et lacinia. Integer viverra eros quis erat tincidunt pulvinar. Nulla venenatis iaculis ex eu lobortis. Vivamus blandit auctor erat, ut scelerisque nisl malesuada non. Aenean quam lectus, tempus sit amet libero non, finibus mollis neque.</p>
+      <p>A Olimpo possui o objetivo de gerar valor no processo de desenvolvimento imobiliário e alta rentabilidade na cadeia lógica do negócio, a OLIMPO atua na estruturação, aquisição e gestão de ativos imobiliários, como loteamentos, incorporações residenciais e comerciais, além de negócios com alta complexidade.</p>
+      <p>Com estrutura própria de inteligência regulatória, de desenvolvimento e alto nível sistêmico e tecnológico, a OLIMPO atua em toda estado de São Paulo, principalmente nas regiões de interior, com presença hoje em mais de 17 cidades, além da capital.</p>
 
       <section class="ltco_our_business__triade ltco-pt-2 ltco-pt-md-4">
         <div class="row-grid">
           <?php
             $content = [
               [
+                'icon' => 'icon-get-key',
+                'title' => 'Incorporação e venda',
+                'description' => 'Sinergia total de incorporação e financeiro, que permite o lançamento e vendas dos ativos imobiliários com agilidade e eficiência. Tecnologia de ponta e uma equipe qualificada com parceiros e executivos de grande expertise no mercado.'
+              ],
+              [
                 'icon' => 'icon-point-global',
-                'title' => 'Gestão de ativos imobilários'
+                'title' => 'Gestão de ativos imobilários',
+                'description' => 'A estrutura modularizada e com grande tecnologia incorporada em seus processos possibilita alta capacidade de estruturação de negócios, gestão e desenvolvimento de ativos imobiliários com foco na alta performance e rentabilidade.'
               ],
               [
                 'icon' => 'icon-shake-hands',
-                'title' => 'Financial'
-              ],
-              [
-                'icon' => 'icon-get-key',
-                'title' => 'Incorporação e venda'
+                'title' => 'Financial',
+                'description' => 'Estruturações de produtos financeiros aderentes ao negocio imobiliário, permitindo maior velocidade de venda e reduzindo os custos de lançamento e venda, permitindo o acesso a um segundo nível de ganhos na cadeia de venda (emissão de CRI’s).'
               ],
             ];
 
@@ -38,7 +41,7 @@
             <img src="<?= ltco_path('svgs'); ?>/<?= $item['icon'] ?>.svg" alt="<?= $item['icon'] ?>">
             <p class="heading h5"><?= $item['title'] ?></p>
             <div class="content">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lobortis egestas ligula id fermentum. Etiam consequat et libero nec rutrum. Nulla non ex vel dolor tristique ultrices sed a justo. Ut non metus venenatis, vehicula odio sed, scelerisque diam. Suspendisse rhoncus bibendum enim, eget imperdiet metus</p>
+              <p><?= $item['description'] ?></p>
             </div>
           </div>
 
@@ -54,7 +57,7 @@
                 <img src="<?= ltco_path('svgs'); ?>/<?= $item['icon'] ?>.svg" alt="<?= $item['icon'] ?>">
                 <p class="heading h5"><?= $item['title'] ?></p>
                 <div class="content">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lobortis egestas ligula id fermentum. Etiam consequat et libero nec rutrum. Nulla non ex vel dolor tristique ultrices sed a justo. Ut non metus venenatis, vehicula odio sed, scelerisque diam. Suspendisse rhoncus bibendum enim, eget imperdiet metus</p>
+                  <p><?= $item['description'] ?></p>
                 </div>
               </li>
 

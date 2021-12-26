@@ -8,7 +8,7 @@
           '#about' => 'O Empreendimento',
           '#differentials' => 'Diferenciais',
           '#location' => 'Localização',
-          '#gallery' => 'Fotos',
+          '#gallery' => 'Imagens',
           '#humanized-project' => 'Planta Humanizada',
           '#work-stage' => 'Andamento da Obra'
         ];

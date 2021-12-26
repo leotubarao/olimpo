@@ -8,6 +8,7 @@
   }
 
   p {
+    position: relative;
     margin-bottom: 0;
   }
 
@@ -39,6 +40,20 @@
   input[type="submit"] {
     width: 100%;
     max-width: 250px;
+  }
+
+  .ajax-loader {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    margin: 0;
+    transform: translateY(-50%);
+    pointer-events: none;
+    background-color: ltco_color();
+  }
+
+  .btn-primary ~ .ajax-loader {
+    background-color: ltco_color('yellow');
   }
 
   .wpcf7-response-output {
