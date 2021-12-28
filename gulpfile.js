@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
@@ -15,8 +13,8 @@ const isProductionEnviroment = process.env.NODE_ENV === 'production';
 let tasksArr = [];
 let taskObjectArr = Object.entries(gulppath.tasks);
 
-for ( let key in taskObjectArr ) {
-  if ( taskObjectArr[key][1] !== null ) {
+for (let key in taskObjectArr) {
+  if (taskObjectArr[key][1] !== null) {
     tasksArr.push(taskObjectArr[key][0]);
   }
 }
@@ -98,6 +96,8 @@ function browser() {
 
   if (browserSyncOptions) browserSyncOptions.logPrefix = packageFile.name;
 
+  const isWebProxy = process.env.FILES_ENV === 'true';
+
   const options = {
     server: {
       baseDir: './public',
@@ -106,7 +106,7 @@ function browser() {
       }
     },
     callbacks: {
-      ready: function(_err, bs) {
+      ready: function (_err, bs) {
         bs.addMiddleware("*", function (_req, res) {
           res.writeHead(302, {
             location: "404"
@@ -118,7 +118,7 @@ function browser() {
     }
   };
 
-  browserSync.init(browserSyncOptions || options);
+  browserSync.init(!isWebProxy ? browserSyncOptions : options);
 }
 
 gulp.task('browser-sync', browser);
@@ -170,4 +170,4 @@ gulp.task(
   )
 );
 
-gulp.task( 'default', gulp.parallel(tasksArr) );
+gulp.task('default', gulp.parallel(tasksArr));

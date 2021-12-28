@@ -7,10 +7,11 @@
   "author": "Leônidas Santos <oi@ltco.com.br>",
   "license": "MIT",
   "scripts": {
-    "dev:server": "gulp server",
-    "look": "gulp watch_essentials",
     "dev": "gulp dev",
-    "build": "NODE_ENV=production gulp"
+    "dev:server": "gulp server",
+    "files:server": "cross-env FILES_ENV=true gulp server",
+    "look": "gulp watch_essentials",
+    "build": "cross-env NODE_ENV=production gulp"
   },
   "dependencies": {
     "@popperjs/core": "^2.9.3",
@@ -26,7 +27,7 @@
     "@babel/preset-env": "^7.15.0",
     "babel-preset-minify": "^0.5.1",
     "browser-sync": "^2.27.5",
-    "dotenv": "^10.0.0",
+    "cross-env": "^7.0.3",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-babel": "^8.0.0",
