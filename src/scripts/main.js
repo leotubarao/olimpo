@@ -165,6 +165,9 @@ function handleTab(el, initActive = false) {
   const classActive = 'active';
 
   const containerTab = document.querySelector(el);
+
+  if (!containerTab) return;
+
   const tabButton = containerTab.querySelectorAll('.tab-button');
   const tabContent = containerTab.querySelectorAll('.tab-content');
 
