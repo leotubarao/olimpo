@@ -1,0 +1,65 @@
+[
+	{
+		"enabled": true,
+		"id": "b73c9874-d65b-4f2b-868d-ef281f623c42",
+		"name": "Olimpo",
+		"filter": {
+			"key": "page-url",
+			"condition": "starts-with",
+			"value": ""
+		},
+		"rules": [
+			{
+				"enabled": true,
+				"id": "1ae11673-a6f6-444d-bb98-79bcb88dec14",
+				"criteria": {
+					"key": "url",
+					"condition": "regex",
+					"value": ".*public\\/styles\\/main.css.*"
+				},
+				"actions": [
+					{
+						"type": "redirect-to",
+						"details": {
+							"value": "http://localhost:3000/styles/main.css"
+						}
+					}
+				]
+			},
+			{
+				"enabled": true,
+				"id": "c86de549-d077-4fdf-ad13-9e1868374ced",
+				"criteria": {
+					"key": "url",
+					"condition": "regex",
+					"value": ".*public\\/scripts\\/main.js.*"
+				},
+				"actions": [
+					{
+						"type": "redirect-to",
+						"details": {
+							"value": "http://localhost:3000/scripts/main.js"
+						}
+					}
+				]
+			},
+			{
+				"enabled": true,
+				"id": "30835b27-4861-4dd8-a65a-c609b35e26e6",
+				"criteria": {
+					"key": "url",
+					"condition": "starts-with",
+					"value": ".*public\\/scripts\\/enterprises_ajax.js.*"
+				},
+				"actions": [
+					{
+						"type": "redirect-to",
+						"details": {
+							"value": "http://localhost:3000/scripts/enterprises_ajax.js"
+						}
+					}
+				]
+			}
+		]
+	}
+]
