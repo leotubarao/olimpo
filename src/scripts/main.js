@@ -10,7 +10,7 @@ $(document).on({
   },
 
   keyup: function (e) {
-    if (e.code === 'Enter' && $('.navbar-collapse').hasClass('show')) {
+    if (e.code === 'Escape' && $('.navbar-collapse').hasClass('show')) {
       $('.navbar-collapse.show').collapse('hide');
 
       $('body').removeAttr('style');
@@ -23,7 +23,7 @@ $(document).on({
 $('.navbar .navbar-toggler').on('click', function () {
   $('body').removeAttr('style');
 
-  if (!$(this).hasClass('inside')) {
+  if (!$('.navbar-collapse').hasClass('show') && !$(this).hasClass('inside')) {
     $('body').css({
       overflow: 'hidden',
       paddingRight: $(window).outerWidth() - $(window).width()+'px'
