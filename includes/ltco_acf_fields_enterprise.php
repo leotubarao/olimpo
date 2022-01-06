@@ -40,6 +40,26 @@ if ( function_exists( 'acf_add_local_field_group' ) ) :
         'ui_off_text' => '',
       ),
       array(
+        'key' => 'ltco_enterprise__enterprise_type',
+        'label' => 'Tipo de empreendimento',
+        'name' => 'ltco_enterprise__enterprise_type',
+        'type' => 'radio',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '50',
+          'class' => '',
+          'id' => '',
+        ),
+        'choices' => array(
+          'default'	=> 'Nenhum',
+          'blue'	=> 'Incorporações',
+          'green'	=> 'Loteamentos',
+        ),
+        'return_format' => 'value',
+      ),
+      array(
         'key' => 'ltco_enterprise__city',
         'label' => 'Cidade',
         'name' => 'ltco_enterprise__city',
@@ -48,7 +68,7 @@ if ( function_exists( 'acf_add_local_field_group' ) ) :
         'required' => 0,
         'conditional_logic' => 0,
         'wrapper' => array(
-          'width' => '',
+          'width' => '50',
           'class' => '',
           'id' => '',
         ),
