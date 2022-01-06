@@ -8,9 +8,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "gulp dev",
+    "dev:files": "cross-env FILES_ENV=true gulp dev",
     "dev:server": "gulp server",
     "files:server": "cross-env FILES_ENV=true gulp server",
-    "look": "gulp watch_essentials",
     "build": "cross-env NODE_ENV=production gulp"
   },
   "dependencies": {
