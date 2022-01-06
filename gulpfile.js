@@ -10,8 +10,8 @@ const gulppath = require('./gulppath');
 
 const isProductionEnviroment = process.env.NODE_ENV === 'production';
 
-let tasksArr = [];
-let taskObjectArr = Object.entries(gulppath.tasks);
+const tasksArr = [];
+const taskObjectArr = Object.entries(gulppath.tasks);
 
 for (let key in taskObjectArr) {
   if (taskObjectArr[key][1] !== null) {
@@ -20,7 +20,7 @@ for (let key in taskObjectArr) {
 }
 
 function ltco_styles() {
-  let { srcPath, destPath } = gulppath.tasks.ltco_styles;
+  const { srcPath, destPath } = gulppath.tasks.ltco_styles;
 
   return gulp
     .src(srcPath)
@@ -35,7 +35,7 @@ function ltco_styles() {
 gulp.task('ltco_styles', ltco_styles);
 
 function ltco_scripts() {
-  let { srcPath, destPath } = gulppath.tasks.ltco_scripts;
+  const { srcPath, destPath } = gulppath.tasks.ltco_scripts;
 
   return gulp
     .src(srcPath, { sourcemaps: true })
@@ -47,7 +47,7 @@ function ltco_scripts() {
 gulp.task('ltco_scripts', ltco_scripts);
 
 function ltco_plugins_styles() {
-  let { srcPath, destPath } = gulppath.tasks.ltco_plugins_styles;
+  const { srcPath, destPath } = gulppath.tasks.ltco_plugins_styles;
 
   return gulp
     .src(srcPath)
@@ -58,7 +58,7 @@ function ltco_plugins_styles() {
 gulp.task('ltco_plugins_styles', ltco_plugins_styles);
 
 function ltco_plugins_scripts() {
-  let { srcPath, destPath } = gulppath.tasks.ltco_plugins_scripts;
+  const { srcPath, destPath } = gulppath.tasks.ltco_plugins_scripts;
 
   return gulp
     .src(srcPath)
@@ -69,36 +69,42 @@ function ltco_plugins_scripts() {
 gulp.task('ltco_plugins_scripts', ltco_plugins_scripts);
 
 function ltco_images() {
-  let { srcPath, destPath } = gulppath.tasks.ltco_images;
+  const { srcPath, destPath } = gulppath.tasks.ltco_images;
 
   return gulp
     .src(srcPath)
     .pipe(gulp.dest(destPath))
-    .pipe(browserSync.stream())
 }
 
 gulp.task('ltco_images', ltco_images);
 
 function ltco_svgs() {
-  let { srcPath, destPath } = gulppath.tasks.ltco_svgs;
+  const { srcPath, destPath } = gulppath.tasks.ltco_svgs;
 
   return gulp
     .src(srcPath)
     .pipe(svgmin())
     .pipe(gulp.dest(destPath))
-    .pipe(browserSync.stream())
 }
 
 gulp.task('ltco_svgs', ltco_svgs);
 
 function browser() {
-  let browserSyncOptions = gulppath.browserSync;
+  const browserSyncOptions = gulppath.browserSync;
 
   if (browserSyncOptions) browserSyncOptions.logPrefix = packageFile.name;
 
   const isWebProxy = process.env.FILES_ENV === 'true';
 
-  const options = {
+  const webProxyOptions = {
+    logPrefix: packageFile.name,
+    open: false,
+    server: {
+      baseDir: "./public"
+    }
+  };
+
+  const defaultOptions = {
     server: {
       baseDir: './public',
       serveStaticOptions: {
@@ -118,36 +124,29 @@ function browser() {
     }
   };
 
-  browserSync.init(!isWebProxy ? browserSyncOptions : options);
+  browserSync.init((isWebProxy ? webProxyOptions : browserSyncOptions) || defaultOptions);
 }
 
 gulp.task('browser-sync', browser);
 
 function watch_everyone() {
-  let watchPath = gulppath.watch;
+  const watchPath = gulppath.watch;
 
   gulp.watch(watchPath.ltco_styles, ltco_styles);
 
   gulp.watch(watchPath.ltco_scripts, ltco_scripts);
 
-  gulp.watch(watchPath.ltco_images, ltco_images);
+  if (process.env.FILES_ENV !== 'true')
+    gulp.watch(watchPath.ltco_images, ltco_images);
 
-  gulp.watch(watchPath.ltco_svgs, ltco_svgs);
+  if (process.env.FILES_ENV !== 'true')
+    gulp.watch(watchPath.ltco_svgs, ltco_svgs);
 
-  gulp.watch(watchPath.ltco_all).on('change', browserSync.reload);
+  if (process.env.FILES_ENV !== 'true')
+    gulp.watch(watchPath.ltco_all).on('change', browserSync.reload);
 }
 
 gulp.task('watch_everyone', watch_everyone);
-
-function watch_essentials() {
-  let watchPath = gulppath.watch;
-
-  gulp.watch(watchPath.ltco_styles, ltco_styles);
-
-  gulp.watch(watchPath.ltco_scripts, ltco_scripts);
-}
-
-gulp.task('watch_essentials', watch_essentials);
 
 gulp.task(
   'server',
