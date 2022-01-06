@@ -40,6 +40,8 @@ require_once('ltco_acf_fields_enterprise.php');
 
 require_once('ltco_cf7_props.php');
 
+require_once('ltco_enterprise_body_class.php');
+
 // require_once('ltco_single_post_functions.php');
 
 // require_once('ltco_comments.php');
