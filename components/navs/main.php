@@ -1,11 +1,7 @@
 <nav class="navbar navbar-dark ltco_navbar_header">
   <div class="container">
     <a class="navbar-brand" href="<?= home_url(); ?>">
-      <img
-        src="<?= ltco_path('svgs'); ?>/logo-olimpo.svg"
-        width="210"
-        alt="logo-olimpo"
-      />
+      <?= ltco_logo_color(); ?>
     </a>
 
     <button
