@@ -17,7 +17,7 @@
       margin-right: 0;
 
       img {
-        width: 160px;
+        width: 100px;
       }
     }
 
@@ -59,7 +59,7 @@
     }
 
     &[aria-expanded="true"] {
-      background-color: ltco_color('green-dark');
+      background-color: ltco_color();
     }
   }
 
@@ -93,7 +93,7 @@
 
   &__collapse {
     .navbar-wrapper {
-      background-color: ltco_color('green-dark');
+      background-color: ltco_color();
       overflow: auto;
       position: fixed;
       display: block;
@@ -125,7 +125,7 @@
       right: 0;
       position: fixed;
       display: block;
-      background-color: rgba(ltco_color(), .5);
+      background-color: rgba(ltco_color('gray-700'), .5);
       transition: all 500ms ease;
       z-index: 9998;
       cursor: pointer;
@@ -162,12 +162,12 @@
       .nav-link,
       .dropdown-item {
         padding: 0.4rem 1rem;
-        color: ltco_color('yellow');
+        color: ltco_color('orange-100');
         font-weight: 700;
         @include transition($transition-base);
 
         &:hover {
-          color: ltco_color('yellow');
+          color: ltco_color('orange-100');
         }
       }
 

@@ -6,6 +6,8 @@ require_once('ltco_get_head.php');
 
 require_once('ltco_header.php');
 
+require_once('ltco_logo_color.php');
+
 require_once('ltco_social_nav.php');
 
 require_once('ltco_thumbnail_image.php');
@@ -39,6 +41,8 @@ require_once('ltco_counter_views.php');
 require_once('ltco_acf_fields_enterprise.php');
 
 require_once('ltco_cf7_props.php');
+
+require_once('ltco_enterprise_body_class.php');
 
 // require_once('ltco_single_post_functions.php');
 

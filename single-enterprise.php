@@ -81,7 +81,7 @@
     <section id="differentials" class="ltco_enterprise__differential">
       <div class="<?= $className; ?>">
         <div class="ltco_enterprise__location__content">
-          <h2 class="text-primary mb-4">Diferenciais</h2>
+          <h2 class="mb-4">Diferenciais</h2>
         </div>
 
         <div class="ltco_enterprise__differential__slide">
@@ -126,7 +126,7 @@
 
     <section id="location" class="ltco_enterprise__location <?= $className; ?>">
       <div class="ltco_enterprise__location__content">
-        <h2 class="text-primary mb-4">Localização</h2>
+        <h2 class="mb-4">Localização</h2>
         <address>
           <?= ltco_the_field('ltco_enterprise__location'); ?>
         </address>
@@ -209,7 +209,7 @@
 
     <section id="work-stage" class="ltco_enterprise__work_stage">
       <div class="<?= $className; ?>">
-        <h2 class="text-primary mb-4">Andamento da Obra</h2>
+        <h2 class="mb-4">Andamento da Obra</h2>
 
         <ul>
           <?php

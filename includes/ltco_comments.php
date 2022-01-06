@@ -84,7 +84,7 @@ function ltco_comment_form( $args ) {
     ( $req ? $required_text : '' )
   );
 
-  $args['class_submit'] = 'btn btn-tertiary';
+  $args['class_submit'] = 'btn btn-secondary';
   $args['label_submit'] = 'Enviar';
   $args['submit_field'] = '<div class="form-submit d-flex justify-content-end mt-3">%1$s %2$s</div>';
 

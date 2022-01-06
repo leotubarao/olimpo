@@ -5,17 +5,27 @@
 
 // Color system LTCO
 
-$ltco_primary: #163528;
-$ltco_secondary: #caae42;
+$ltco_orange_100: #f9b233;
+$ltco_orange_300: #f39226;
+$ltco_orange_500: #e94e1b;
+$ltco_orange_700: #952500;
 
-$ltco_primary_dark: #0D1D17;
-$ltco_light: #ffe47c;
-$ltco_dark: #716021;
+$ltco_green_100: #2fac66;
+$ltco_green_300: #109640;
+$ltco_green_500: #086633;
+$ltco_green_700: #002f16;
 
-$ltco_gray_100: #f5f5f5;
+$ltco_blue_100: #35a8e0;
+$ltco_blue_300: #1d71b8;
+$ltco_blue_500: #2d2e83;
+$ltco_blue_700: #001e38;
+
+$ltco_gray_100: #F5F5F5;
 $ltco_gray_300: #bebebe;
 $ltco_gray_500: #7f7f7f;
 $ltco_gray_700: #2D2D2D;
+
+$ltco_primary: $ltco_orange_700;
 
 $ltco_path_images: '../images';
 $ltco_path_svgs: '../images/svgs';
@@ -25,11 +35,18 @@ $ltco-colors: () !default;
 $ltco-colors: map-merge(
   (
   "white": #FFF,
-  "green": $ltco_primary,
-  "green-dark": $ltco_primary_dark,
-  "yellow": $ltco_secondary,
-  "yellow-light": $ltco_light,
-  "yellow-dark": $ltco_dark,
+  "orange-100": $ltco_orange_100,
+  "orange-300": $ltco_orange_300,
+  "orange-500": $ltco_orange_500,
+  "orange-700": $ltco_orange_700,
+  "green-100": $ltco_green_100,
+  "green-300": $ltco_green_300,
+  "green-500": $ltco_green_500,
+  "green-700": $ltco_green_700,
+  "blue-100": $ltco_blue_100,
+  "blue-300": $ltco_blue_300,
+  "blue-500": $ltco_blue_500,
+  "blue-700": $ltco_blue_700,
   "gray-100": $ltco_gray_100,
   "gray-300": $ltco_gray_300,
   "gray-500": $ltco_gray_500,
@@ -112,9 +129,12 @@ $dark:          $gray-800 !default;
 $theme-colors: () !default;
 $theme-colors: map-merge(
   (
-    "primary":    $ltco_primary,
-    "secondary":  $ltco_secondary,
-    "tertiary":   $white,
+    "primary":    $ltco_orange_700,
+    "secondary":  $ltco_orange_100,
+    "orange":     $ltco_orange_500,
+    "green":      $ltco_green_100,
+    "blue":       $ltco_blue_100,
+    "white":      $white,
     "success":    $success,
     "info":       $info,
     "warning":    $warning,

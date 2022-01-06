@@ -1,0 +1,161 @@
+.ltco_blue {
+  *::selection {
+    background-color: ltco_color('blue-700');
+  }
+
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6 {
+    color: ltco_color('blue-500');
+  }
+
+  .btn-secondary {
+    $mynewcolor: ltco_color('blue-100');
+
+    @include button-variant($mynewcolor, darken($mynewcolor, 7.5%), darken($mynewcolor, 10%), lighten($mynewcolor,5%), lighten($mynewcolor, 10%), darken($mynewcolor,30%));
+  }
+
+  .form-control {
+    &:focus {
+      border-color: lighten(ltco_color('blue-100'), 25%);
+
+      $current-focus-color: rgba(ltco_color('blue-100'), .25);
+      box-shadow: 0 0 0 $input-btn-focus-width $current-focus-color;
+    }
+  }
+
+  .ltco_bg_dark {
+    a {
+      color: ltco_color('blue-300');
+
+      @include hover {
+        color: ltco_color('blue-300');
+      }
+    }
+  }
+
+  .list_style_ltco li:before {
+    color: ltco_color('blue-700');
+  }
+
+  .ltco_btn_back {
+    &:before {
+      background-color: ltco-color('blue-700');
+    }
+
+    &,
+    &:hover,
+    &:focus {
+      color: ltco-color('blue-700');
+    }
+  }
+
+  .ltco_golden_icon {
+    &:before {
+      background-color: ltco_color('blue-100');
+    }
+
+    &.three {
+      &:before {
+        box-shadow: 16px -16px 0 ltco_color('blue-100'), -16px 16px 0 ltco_color('blue-100');
+      }
+
+      &.line:after {
+        background-color: ltco_color('blue-100');
+      }
+    }
+  }
+
+  .ltco_navbar_header {
+    .navbar-toggler[aria-expanded="true"] {
+      background-color: ltco_color('blue-700');
+    }
+
+    &__collapse {
+      .navbar-wrapper {
+        background-color: ltco_color('blue-700');
+      }
+
+      &:before {
+        background-color: rgba(ltco_color('gray-700'), .5);
+      }
+
+      .nav-item {
+        .nav-link,
+        .dropdown-item {
+          color: ltco_color('blue-100');
+
+          &:hover {
+            color: ltco_color('blue-100');
+          }
+        }
+
+        &.active .nav-link,
+        &.active .dropdown-item {
+          background-color: lighten(ltco_color('blue-700'), 6%);
+        }
+      }
+    }
+  }
+
+  .header,
+  .header:not(.home):not(.no-thumbs):not(.no-overlay):before {
+    background-color: ltco_color('blue-700');
+  }
+
+  .ltco_form .ajax-loader {
+    background-color: ltco_color('blue-700');
+  }
+
+  .ltco_nav_scroll {
+    background-color: ltco_color('blue-100');
+
+    &:before {
+      background: linear-gradient(90deg, ltco_color('blue-100') 20%, rgba(ltco_color('blue-100'), .7) 60%, rgba(ltco_color('blue-100'), 0) 100%);
+    }
+
+    &:after {
+      background: linear-gradient(-90deg, ltco_color('blue-100') 20%, rgba(ltco_color('blue-100'), .7) 60%, rgba(ltco_color('blue-100'), 0) 100%);
+    }
+  }
+
+  .splide {
+    &__pagination__page {
+      &.is-active {
+        background-color: ltco_color('blue-500') !important;
+        border: 1px solid ltco_color('blue-500') !important;
+      }
+    }
+  }
+
+  .ltco_enterprise {
+    &__gallery__image__description {
+      background-color: rgba(ltco_color('blue-100'), 0.7);
+    }
+
+    &__work_stage {
+      li:first-child [class*="__status"] {
+        background-color: ltco_color('blue-100');
+      }
+
+      &__status {
+        background-color: ltco_color('blue-500');
+      }
+    }
+  }
+
+  .ltco_before_footer {
+    background-color: ltco_color('blue-100');
+  }
+
+  .ltco_footer {
+    background-color: ltco_color('blue-500');
+
+    .divisor {
+      background-color: lighten(ltco_color('blue-500'), 10%);
+    }
+
+    &__copyright {
+      border-top: 1px solid lighten(ltco_color('blue-500'), 10%);
+    }
+  }
+}

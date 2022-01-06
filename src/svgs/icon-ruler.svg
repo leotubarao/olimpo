@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="68.276" height="25.573" viewBox="0 0 68.276 25.573">
   <g id="icon-ruler" transform="translate(0.5 0.5)">
-    <path id="XMLID_1270_" d="M117.427,0V67.276H142V0Zm20.937,3.637v.055l-8.65,5.923-8.65-5.923V3.637Zm0,21.365v10.91h-7.273v3.637h7.273v10.91h-7.273v3.637h7.273v9.546h-17.3V8.1l8.65,5.923,8.65-5.923V21.365h-7.273V25Z" transform="translate(67.276 -117.427) rotate(90)" fill="#163528" stroke="#fff" stroke-width="1"/>
+    <path id="XMLID_1270_" d="M117.427,0V67.276H142V0Zm20.937,3.637v.055l-8.65,5.923-8.65-5.923V3.637Zm0,21.365v10.91h-7.273v3.637h7.273v10.91h-7.273v3.637h7.273v9.546h-17.3V8.1l8.65,5.923,8.65-5.923V21.365h-7.273V25Z" transform="translate(67.276 -117.427) rotate(90)" fill="#000" stroke="#fff" stroke-width="1"/>
   </g>
 </svg>
