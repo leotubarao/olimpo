@@ -5,7 +5,7 @@
     <div class="ltco_our_business__cta">
       <div class="container ltco-py-2">
         <p class="h2 text-white">A Olimpo tem o empreendimento perfeito para você!</p>
-        <a href="<?= esc_url( home_url( 'empreendimentos' ) ); ?>" class="btn btn-outline-tertiary ltco_button" title="Conheça mais">Conheça mais</a>
+        <a href="<?= esc_url( home_url( 'empreendimentos' ) ); ?>" class="btn btn-outline-white ltco_button" title="Conheça mais">Conheça mais</a>
       </div>
     </div>
 
