@@ -1,4 +1,4 @@
-@function ltco_color($key: "green") {
+@function ltco_color($key: "orange-700") {
   @return map-get($ltco-colors, $key);
 }
 
