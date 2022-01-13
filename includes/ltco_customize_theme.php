@@ -52,22 +52,6 @@ if ( function_exists('acf_add_local_field_group') ) {
         'placeholder' => '',
       ),
       array(
-        'key' => 'ltco_links__sac',
-        'label' => 'SAC',
-        'name' => 'ltco_links__sac',
-        'type' => 'url',
-        'instructions' => '',
-        'required' => 0,
-        'conditional_logic' => 0,
-        'wrapper' => array(
-          'width' => '',
-          'class' => '',
-          'id' => '',
-        ),
-        'default_value' => '',
-        'placeholder' => '',
-      ),
-      array(
         'key' => 'ltco_links__ticket',
         'label' => 'Segunda via do boleto',
         'name' => 'ltco_links__ticket',
