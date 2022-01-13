@@ -20,6 +20,13 @@ function ltco_condition($condition, $if, $else = null) {
   return ($condition) ? $if : $else;
 }
 
+function ltco_form_class_attr( $class ) {
+  $class .= ' ltco_form';
+  return $class;
+}
+
+add_filter( 'wpcf7_form_class_attr', 'ltco_form_class_attr' );
+
 /*=================================
 =            Debug PHP            =
 =================================*/
