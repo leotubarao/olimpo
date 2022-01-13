@@ -34,7 +34,7 @@
     <h2 class="text-primary">Quem é a Olimpo</h2>
     <p>A Olimpo Participações valoriza a inovação e as novas tendências.</p>
     <p>O sucesso da empresa está na equipe que carrega o posicionamento estratégico, os valores e as políticas da empresa como foco para todo tipo de atividade desenvolvida.</p>
-    <a href="<?= esc_url( home_url( 'quem-somos' ) ); ?>" class="btn btn-orange ltco_button" title="Conheça mais">Conheça mais</a>
+    <a href="<?= esc_url( home_url( 'quem-somos' ) ); ?>" class="btn btn-primary ltco_button" title="Conheça mais">Conheça mais</a>
   </div>
 </section>
 <?php get_footer(); ?>
