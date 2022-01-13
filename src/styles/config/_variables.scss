@@ -5,10 +5,10 @@
 
 // Color system LTCO
 
-$ltco_orange_100: #f9b233;
-$ltco_orange_300: #f39226;
-$ltco_orange_500: #e94e1b;
-$ltco_orange_700: #952500;
+$ltco_main_100: #109640;
+$ltco_main_300: #f9b233;
+$ltco_main_500: #1a752c;
+$ltco_main_700: #0a4b17;
 
 $ltco_green_100: #2fac66;
 $ltco_green_300: #109640;
@@ -25,7 +25,7 @@ $ltco_gray_300: #bebebe;
 $ltco_gray_500: #7f7f7f;
 $ltco_gray_700: #2D2D2D;
 
-$ltco_primary: $ltco_orange_700;
+$ltco_primary: $ltco_main_100;
 
 $ltco_path_images: '../images';
 $ltco_path_svgs: '../images/svgs';
@@ -35,10 +35,10 @@ $ltco-colors: () !default;
 $ltco-colors: map-merge(
   (
   "white": #FFF,
-  "orange-100": $ltco_orange_100,
-  "orange-300": $ltco_orange_300,
-  "orange-500": $ltco_orange_500,
-  "orange-700": $ltco_orange_700,
+  "main-100": $ltco_main_100,
+  "main-300": $ltco_main_300,
+  "main-500": $ltco_main_500,
+  "main-700": $ltco_main_700,
   "green-100": $ltco_green_100,
   "green-300": $ltco_green_300,
   "green-500": $ltco_green_500,
@@ -129,9 +129,8 @@ $dark:          $gray-800 !default;
 $theme-colors: () !default;
 $theme-colors: map-merge(
   (
-    "primary":    $ltco_orange_700,
-    "secondary":  $ltco_orange_100,
-    "orange":     $ltco_orange_500,
+    "primary":    $ltco_main_100,
+    "secondary":  $ltco_main_300,
     "green":      $ltco_green_100,
     "blue":       $ltco_blue_100,
     "white":      $white,
