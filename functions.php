@@ -77,7 +77,68 @@ function ltco_social_shortcode() {
 }
 add_shortcode( 'ltco_social_shortcode', 'ltco_social_shortcode' );
 
+function ltco_whatsapp_button($atts, $content = null) {
+  $props_whatsapp_button = shortcode_atts( array(
+    'link' => '#',
+  ), $atts );
+
+  $props_whatsapp_button['content'] = $content;
+
+  ob_start();
+  echo get_template_part(
+    'components/shortcodes/whatsapp_button',
+    null,
+    $props_whatsapp_button
+  );
+  return ob_get_clean();
+}
+
+add_shortcode( 'ltco_whatsapp_button', 'ltco_whatsapp_button' );
+
+function ltco_sac_subject() {
+  ob_start();
+  echo get_template_part('components/shortcodes/sac/subject');
+  return ob_get_clean();
+}
+add_shortcode( 'ltco_sac_subject', 'ltco_sac_subject' );
+
+function ltco_sac_repairs() {
+  ob_start();
+  echo get_template_part('components/shortcodes/sac/repairs');
+  return ob_get_clean();
+}
+add_shortcode( 'ltco_sac_repairs', 'ltco_sac_repairs' );
+
 /*=====  End of Shortcodes  ======*/
+
+function ltco_select_dropdown($tag, $replace ) {
+  if ( $tag['name'] !== 'enterprise-field' ) return $tag;
+
+  $rows = get_posts(
+    array (
+      'post_type' => 'enterprise',
+      'numberposts' => -1,
+      'orderby' => 'title',
+      'order' => 'ASC'
+    )
+  );
+
+  if ( !$rows ) return $tag;
+
+  foreach ( $rows as $row ) {
+    $tag['raw_values'][] = $row->post_title . '|' . $row->post_title;
+  }
+
+  $pipes = new WPCF7_Pipes($tag['raw_values']);
+
+  $tag['values'] = $pipes->collect_befores();
+  $tag['labels'] = $pipes->collect_afters();
+  $tag['pipes'] = $pipes;
+
+  return $tag;
+}
+
+add_filter( 'wpcf7_form_tag', 'ltco_select_dropdown', 10, 2);
 
 function ltco_wpcf7_elements($content) {
   $regexSpan = '/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i';

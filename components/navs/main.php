@@ -20,6 +20,8 @@
     <div class="ltco_navbar_header__navbar_visible">
       <span class="ltco_golden_icon small"></span>
       <a href="<?= esc_url( home_url( 'empreendimentos' ) ); ?>">Empreendimentos</a>
+      <span class="ltco_golden_icon small"></span>
+      <a href="<?= esc_url( home_url( 'sac' ) ); ?>">SAC</a>
       <?php
         $customer_portal = get_field( 'ltco_links__customer_portal', 'options' );
 
