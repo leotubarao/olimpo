@@ -162,12 +162,12 @@
       .nav-link,
       .dropdown-item {
         padding: 0.4rem 1rem;
-        color: ltco_color('orange-100');
+        color: ltco_color('main-300');
         font-weight: 700;
         @include transition($transition-base);
 
         &:hover {
-          color: ltco_color('orange-100');
+          color: ltco_color('main-300');
         }
       }
 

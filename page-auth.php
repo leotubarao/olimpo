@@ -29,9 +29,9 @@
   <header class="d-flex w-100 bg-primary mb-4 p-4">
     <img
       class="m-auto"
-      src="<?= ltco_path('svgs'); ?>/logo-olimpo.svg"
-      alt="logo-olimpo"
-      width="200"
+      src="<?= ltco_path('svgs'); ?>/logo_olp.svg"
+      alt="logo-olp"
+      width="130"
     />
   </header>
 
@@ -70,6 +70,6 @@
   </div>
 
   <button class="btn btn-lg btn-secondary btn-block" name="wp-submit" type="submit">Entrar</button>
-  <p class="mt-5 mb-3 text-muted">© 2017-2021</p>
+  <p class="mt-5 mb-3 text-muted">© 2022</p>
 </form>
 <?php get_footer('error'); ?>

@@ -53,7 +53,7 @@
   }
 
   .btn-primary ~ .ajax-loader {
-    background-color: ltco_color('orange-100');
+    background-color: ltco_color('main-700');
   }
 
   .wpcf7-response-output {
@@ -66,27 +66,27 @@
     background-color: #cce5ff;
   }
 
-  .wpcf7 form.sent .wpcf7-response-output {
+  &.sent .wpcf7-response-output {
     color: #155724 !important;
     background-color: #d4edda !important;
     border-color: #c3e6cb !important;
   }
 
-  .wpcf7 form.failed .wpcf7-response-output,
-  .wpcf7 form.aborted .wpcf7-response-output {
+  &.failed .wpcf7-response-output,
+  &.aborted .wpcf7-response-output {
     color: #721c24 !important;
     background-color: #f8d7da !important;
     border-color: #f5c6cb !important;
   }
 
-  .wpcf7 form.spam .wpcf7-response-output {
+  &.spam .wpcf7-response-output {
     color: #383d41 !important;
     background-color: #e2e3e5 !important;
     border-color: #d6d8db !important;
   }
 
-  .wpcf7 form.invalid .wpcf7-response-output,
-  .wpcf7 form.unaccepted .wpcf7-response-output {
+  &.invalid .wpcf7-response-output,
+  &.unaccepted .wpcf7-response-output {
     color: #856404 !important;
     background-color: #fff3cd !important;
     border-color: #ffeeba !important;

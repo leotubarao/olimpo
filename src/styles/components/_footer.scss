@@ -1,8 +1,8 @@
 .ltco_footer {
-  background-color: ltco_color('orange-300');
+  background-color: ltco_color('main-500');
 
   .divisor {
-    background-color: ltco_color('orange-100');
+    background-color: ltco_color('main-100');
     width: 1px;
     min-height: 100%;
     margin: 3rem;
@@ -92,7 +92,7 @@
   }
 
   &__copyright {
-    border-top: 1px solid ltco_color('orange-100');
+    border-top: 1px solid ltco_color('main-100');
     padding-top: 2rem;
     padding-bottom: 2rem;
 

@@ -140,9 +140,9 @@ function ltco_form_content( $args = null ) {
   $header = sprintf(
     '<header class="d-flex w-100 bg-primary mb-4 p-4">%s</header>',
     sprintf(
-      '<img class="m-auto" src="%s" alt="%s" width="200" />',
-      ltco_path('svgs').'/logo-olimpo.svg',
-      'logo-olimpo'
+      '<img class="m-auto" src="%s" alt="%s" width="130" />',
+      ltco_path('svgs').'/logo_olp.svg',
+      'logo-olp'
     )
   );
 
@@ -163,7 +163,7 @@ function ltco_form_content( $args = null ) {
 
   $submit = ltco_form_button( $args['button'] );
 
-  $copyright = '<p class="mt-5 mb-3 text-muted">© 2021</p>';
+  $copyright = '<p class="mt-5 mb-3 text-muted">© 2022</p>';
 
   $conditionAuth = ( $_GET['auth'] === 'failed' )
     ? [$header, $alert, $title, $hidden, $fields, $submit]

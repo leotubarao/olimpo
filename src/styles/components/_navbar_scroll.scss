@@ -1,5 +1,5 @@
 .ltco_nav_scroll {
-  background-color: ltco_color('orange-100');
+  background-color: ltco_color('main-300');
   position: sticky;
   top: 0;
   z-index: $zindex-sticky;
@@ -15,12 +15,12 @@
   }
 
   &:before {
-    background: linear-gradient(90deg, ltco_color('orange-100') 20%, rgba(ltco_color('orange-100'), .7) 60%, rgba(ltco_color('orange-100'), 0) 100%);
+    background: linear-gradient(90deg, ltco_color('main-300') 20%, rgba(ltco_color('main-300'), .7) 60%, rgba(ltco_color('main-300'), 0) 100%);
     left: 0;
   }
 
   &:after {
-    background: linear-gradient(-90deg, ltco_color('orange-100') 20%, rgba(ltco_color('orange-100'), .7) 60%, rgba(ltco_color('orange-100'), 0) 100%);
+    background: linear-gradient(-90deg, ltco_color('main-300') 20%, rgba(ltco_color('main-300'), .7) 60%, rgba(ltco_color('main-300'), 0) 100%);
     right: 0;
   }
 

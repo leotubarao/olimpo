@@ -42,11 +42,17 @@ const brazilianFormatNumberOptions = {
 };
 
 const maskPhone = 'input[name="telefone"], input[name="celular"], input[type="tel"]';
+const maskBirthday = 'input[name*="birthday"], input[class*="birthday"]';
 const maskCNPJ = 'input[name*="cnpj"], input[class*="cnpj"]';
+const maskCPF = 'input[name*="cpf"], input[class*="cpf"]';
+const maskRG = 'input[name*="rg"], input[class*="rg"]';
 
 $(maskPhone).mask(brazilianFormatNumber, brazilianFormatNumberOptions);
 
+$(maskBirthday).mask("99/99/9999");
 $(maskCNPJ).mask("99.999.999/9999-99");
+$(maskCPF).mask("999.999.999-99");
+$(maskRG).mask("99.999.999-9");
 
 function animateScroll( $value = 0 ) {
   $("html, body").animate({

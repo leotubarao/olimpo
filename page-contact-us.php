@@ -11,7 +11,7 @@
       </nav>
     </aside>
     <article class="ltco_contact_us__form">
-      <div id="sac" class="tab-content ltco_form">
+      <div id="sac" class="tab-content">
         <p class="mb-4">
           A OLIMPO possui um ágil sistema de atendimento ao cliente. Você pode abrir e monitorar seus chamados de forma rápida e segura:
         </p>
@@ -28,19 +28,19 @@
         ?>
       </div>
 
-      <div id="fornecedor" class="tab-content ltco_form">
+      <div id="fornecedor" class="tab-content">
         <p class="mb-4 font-weight-bold">
           Envie um e-mail para nosso time e cadastre-se como fornecedor:
         </p>
         <?= do_shortcode('[contact-form-7 id="61" title="Atendimento ao cliente"]'); ?>
       </div>
 
-      <div id="trabalhe" class="tab-content ltco_form">
+      <div id="trabalhe" class="tab-content">
         <p class="mb-4 font-weight-bold">Envie seu currículo para a OLIMPO:</p>
         <?= do_shortcode('[contact-form-7 id="83" title="Currículo"]'); ?>
       </div>
 
-      <div id="boleto" class="tab-content ltco_form">
+      <div id="boleto" class="tab-content">
         <p class="mb-4">
           Para solicitar a sua segunda via, clique abaixo e acesse o portal do cliente:
         </p>
