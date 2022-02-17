@@ -1,4 +1,5 @@
 <li <?php post_class("ltco_enterprises__list__item"); ?>>
+  <?= ltco_badge(); ?>
   <a
     href="<?php the_permalink(); ?>"
     class="ltco_enterprises__list__item__wrapper"

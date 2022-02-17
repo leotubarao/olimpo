@@ -6,6 +6,8 @@ require_once('ltco_get_head.php');
 
 require_once('ltco_header.php');
 
+require_once('ltco_badge.php');
+
 require_once('ltco_logo_color.php');
 
 require_once('ltco_social_nav.php');
