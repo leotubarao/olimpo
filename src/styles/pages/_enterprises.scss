@@ -23,7 +23,48 @@
     }
 
     &__item {
+      position: relative;
       list-style: none;
+      overflow: hidden;
+
+      .ltco_badge {
+        width: 110px;
+        height: 100px;
+        display: block;
+        position: absolute;
+        top: -45px;
+        left: -40px;
+        z-index: 1;
+        transform: rotate(-45deg);
+
+        font-weight: bold;
+        color: #fff;
+        top: 25px;
+        left: 25px;
+        text-align: center;
+        line-height: 1;
+
+        &:before {
+          content: '';
+          background-color: ltco_color('main-300');
+          width: 200px;
+          height: 110px;
+          display: block;
+          position: absolute;
+          transform: rotate(15deg) skewY(-15deg);
+          border-bottom-left-radius: 40px;
+          z-index: -1;
+          top: -61px;
+          left: -11px;
+        }
+
+        &.greenColor:before {
+          background-color: lighten(saturate(ltco_color(), 20%), 20%);
+        }
+        &.redColor:before {
+          background-color: theme-color('danger');
+        }
+      }
 
       &.error {
         grid-column: 1 / -1;
