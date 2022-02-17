@@ -57,7 +57,7 @@ function ltco_enterprise_query() {
   $args = array(
     'post_type' => 'enterprise',
     'order' => 'DESC',
-    'orderby' => 'menu_order',
+    'orderby' => 'date',
     'post_status' => 'publish',
     'showposts' => -1
   );
