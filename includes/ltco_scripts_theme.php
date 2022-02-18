@@ -86,7 +86,7 @@ function ltco_scripts_theme() {
 
   wp_register_script(
     'ltco_dev',
-    'https://leotubarao.github.io/signature/build/signature-ltco.js?theme=dark',
+    'https://leotubarao.github.io/signature/build/signature-ltco.js?theme=light',
     array( 'main' ),
     '2.0.0',
     true
