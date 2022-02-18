@@ -18,6 +18,9 @@
   <?php
     $enterprises_query = new WP_Query([
       'post_type' => 'enterprise',
+      'order' => 'DESC',
+      'orderby' => 'date',
+      'post_status' => 'publish',
       'showposts' => 5
     ]);
 
