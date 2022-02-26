@@ -18,55 +18,6 @@
     <figure class="ltco_about__full_image" <?= styleInline(ltco_image_wp(18)); ?>>
       <img src="<?= ltco_image_wp(18) ?>" class="img-fluid">
     </figure>
-
-    <div class="container ltco-py-2 ltco-py-md-4 ltco-py-lg-6 ltco_about__triade">
-      <header class="ltco_about__triade__header">
-        <p class="h2 text-primary mb-0">Missão, visão e valores</p>
-        <span class="ltco_golden_icon three line"></span>
-      </header>
-
-      <section class="ltco_about__triade__list ltco-pt-2 ltco-pt-md-4">
-        <div class="row-grid">
-          <?php
-            $content = [
-              ['title' => 'Missão'],
-              ['title' => 'Visão'],
-              ['title' => 'Valores'],
-            ];
-
-            foreach ($content as $item) :
-          ?>
-
-          <div class="ltco_about__triade__list__item">
-            <p class="heading h4"><?= $item['title'] ?></p>
-            <div class="content">
-              <p>Tornar-se referência no desenvolvimento de empreendimentos imobiliários inovadores e na prática de gestão com alto grau de planejamento e excelência operacional.</p>
-            </div>
-          </div>
-
-          <?php endforeach; ?>
-        </div>
-
-        <div id="triade_slide" class="splide padding">
-          <div class="splide__track">
-            <ul class="splide__list">
-              <?php foreach ($content as $item) : ?>
-
-              <li class="splide__slide ltco_about__triade__list__item">
-                <p class="heading h4"><?= $item['title'] ?></p>
-                <div class="content">
-                  <p>Tornar-se referência no desenvolvimento de empreendimentos imobiliários inovadores e na prática de gestão com alto grau de planejamento e excelência operacional.</p>
-                </div>
-              </li>
-
-              <?php endforeach; ?>
-
-            </ul>
-          </div>
-        </div>
-      </section>
-
-    </div>
   </article>
 
 <?php get_footer(); ?>
