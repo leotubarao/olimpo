@@ -18,11 +18,11 @@
   </a>
 
   <a
-    href="https://www.olimpoparticipacoes.com.br/sac/painel/index.php?a=add&category=5"
+    href="https://api.whatsapp.com/send?phone=5519999281662&text=Segunda%20via%20do%20boleto."
     target="_blank"
     class="ltco_sac__repairs__item ombudsman"
   >
-    <img src="<?= ltco_path('svgs'); ?>/icon-ombudsman.svg" alt="ltco-icon-ombudsman" />
+    <img src="<?= ltco_path('svgs'); ?>/icon_whatsapp_2.svg" alt="icon_whatsapp_2" />
     <span>Ouvidoria</span>
   </a>
 
