@@ -74,6 +74,10 @@
     position: relative;
     padding-top: 90px;
 
+    @include media-breakpoint-down(sm) {
+      background-image: none !important;
+    }
+
     .container {
       display: grid;
       grid-template-columns: 34px 1fr;
