@@ -16,12 +16,13 @@
           A OLIMPO possui um ágil sistema de atendimento ao cliente. Você pode abrir e monitorar seus chamados de forma rápida e segura:
         </p>
         <?php
-          $customer_portal = get_field( 'ltco_links__sac', 'options' );
+          $customer_sac = get_field( 'ltco_links__sac', 'options' );
 
-          if ( $customer_portal ) {
+          if ( $customer_sac ) {
             echo sprintf(
-              '<a href="%s" class="btn btn-primary" target="_blank" >%s</a>',
-              esc_url( $customer_portal, 'https', '#' ),
+              '<a href="%s" class="btn btn-primary" title="%s">%s</a>',
+              esc_url( $customer_sac, 'https', '#' ),
+              'Vá para o SAC',
               'Clique aqui para acessar'
             );
           }
@@ -42,15 +43,15 @@
 
       <div id="boleto" class="tab-content">
         <p class="mb-4">
-          Para solicitar a sua segunda via, clique abaixo e acesse o portal do cliente:
+          Para solicitar a sua segunda via do boleto, utilize nosso canal exclusivo de WhatsApp:
         </p>
         <?php
-          $customer_portal = get_field( 'ltco_links__ticket', 'options' );
+          $customer_ticket = get_field( 'ltco_links__ticket', 'options' );
 
-          if ( $customer_portal ) {
+          if ( $customer_ticket ) {
             echo sprintf(
               '<a href="%s" class="btn btn-primary" target="_blank" >%s</a>',
-              esc_url( $customer_portal, 'https', '#' ),
+              esc_url( $customer_ticket, 'https', '#' ),
               'Clique aqui para acessar'
             );
           }

@@ -14,9 +14,9 @@ function styleInline( $image ) {
 }
 
 function ltco_thumbnail_image( $id = null ) {
-  $heroImage = get_field( 'ltco_enterprise__hero_image' );
+  $heroImage = get_field( 'ltco_enterprise__hero_image', $id );
 
-  if ( is_singular( 'enterprise' ) ) return $heroImage['url'];
+  if ( is_singular( 'enterprise' ) ?? is_front_page() ) return $heroImage['url'];
 
   if ( has_post_thumbnail( $id ) )
     return get_the_post_thumbnail_url( $id, 'full' );
@@ -36,22 +36,22 @@ function ltco_thumbnail_post( $params = null ) {
 
 function ltco_has_thumbs( $id = null ) {
   $class = 'no-thumbs';
-  $heroImage = get_field( 'ltco_enterprise__hero_image' );
+  $heroImage = get_field( 'ltco_enterprise__hero_image', $id );
 
-  if ( is_singular( 'enterprise' ) && !$heroImage ) return $class;
+  if ( (is_front_page() ?? is_singular( 'enterprise' ) ) && !$heroImage ) return $class;
 
   if ( !has_post_thumbnail( $id ) ) return $class;
 }
 
-function ltco_has_overlay() {
-  if ( !get_field( 'ltco_enterprise__has_overlay' ) ) return 'no-overlay';
+function ltco_has_overlay( $id = null ) {
+  if ( !get_field( 'ltco_enterprise__has_overlay', $id ) ) return 'no-overlay';
 }
 
-function ltco_enterprise_classes( $classes = null ) {
+function ltco_enterprise_classes( $classes = null, $id = null ) {
   $arrayClasses = [
     $classes,
-    ltco_has_thumbs(),
-    ltco_has_overlay()
+    ltco_has_thumbs( $id ),
+    ltco_has_overlay( $id )
   ];
 
   return sprintf(

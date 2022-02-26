@@ -11,7 +11,7 @@
         <span class="ltco_golden_icon three line"></span>
       </header>
       <p class="mb-0">
-        Confira alguns dos nossos empreendimentos e escolhe o melhor para você.
+        Confira alguns dos nossos empreendimentos e escolha o melhor para você.
       </p>
     </li>
 
