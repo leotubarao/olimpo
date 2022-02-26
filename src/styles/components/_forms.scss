@@ -42,18 +42,14 @@
     max-width: 250px;
   }
 
-  .ajax-loader {
+  .wpcf7-spinner {
     position: absolute;
     top: 50%;
     left: 1rem;
     margin: 0;
     transform: translateY(-50%);
     pointer-events: none;
-    background-color: ltco_color();
-  }
-
-  .btn-primary ~ .ajax-loader {
-    background-color: ltco_color('main-700');
+    background-color: ltco_color('gray-700');
   }
 
   .wpcf7-response-output {
