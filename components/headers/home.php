@@ -1,4 +1,4 @@
-<header class="header home">
+<header class="header home" <?= ltco_thumbnail_post(6); ?>>
   <div class="container">
     <?= ltco_social_nav('home'); ?>
     <div class="content">
