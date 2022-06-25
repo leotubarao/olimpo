@@ -30,7 +30,8 @@
         "node_modules/bootstrap/dist/js/bootstrap.min.js",
         "node_modules/jquery-mask-plugin/dist/jquery.mask.min.js",
         "node_modules/@popperjs/core/dist/umd/popper.min.js",
-        "node_modules/@splidejs/splide/dist/js/splide.min.js"
+        "node_modules/@splidejs/splide/dist/js/splide.min.js",
+        "node_modules/sweetalert/dist/sweetalert.min.js"
       ],
       "destPath": "public/scripts"
     },
