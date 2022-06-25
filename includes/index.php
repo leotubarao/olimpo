@@ -2,6 +2,8 @@
 
 require_once('navwalker/class-wp-bootstrap-navwalker.php');
 
+require_once('ltco_api_crm.php');
+
 require_once('ltco_get_head.php');
 
 require_once('ltco_header.php');

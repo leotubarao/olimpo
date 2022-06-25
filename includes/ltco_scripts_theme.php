@@ -77,9 +77,17 @@ function ltco_scripts_theme() {
   );
 
   wp_register_script(
+    'sweetalert',
+    ltco_path('scripts').'/sweetalert.min.js',
+    array(),
+    false,
+    true
+  );
+
+  wp_register_script(
     'main',
     ltco_path('scripts').'/main.js',
-    array('bootstrap', 'jquery_mask', 'splidejs'),
+    array('bootstrap', 'jquery_mask', 'splidejs', 'sweetalert'),
     false,
     true
   );
