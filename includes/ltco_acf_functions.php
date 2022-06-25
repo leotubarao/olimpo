@@ -27,3 +27,19 @@ function ltco_the_field( $params, $type = false ) {
     return ( in_array($type, $typesArray) ) ? $field['url'] : $field;
   }
 }
+
+function ltco_carousel_image_link( $field ) {
+  if ( get_sub_field( $field.'__has_url_image' ) ) {
+    $image_url = get_sub_field( $field.'__url_image' );
+
+    $is_native = strstr( $image_url, '%url_site%' );
+
+    $image_url = ( $is_native ) ? str_replace( '%url_site%', home_url(), $image_url ) : $image_url;
+
+    $external_link = ( !$is_native ) ? 'target="_blank" rel="external noopener noreferrer"' : '';
+
+    $carousel_image_link .= "<a href='$image_url' class='ltco_carousel__float_link' $external_link></a>";
+
+    return $carousel_image_link;
+  }
+}
