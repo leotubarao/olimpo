@@ -13,10 +13,9 @@
 
 <div id="carouselHome" class="carousel slide carousel-fade" data-ride="carousel">
 
-  <?php if ( !have_rows( ...$field_params ) ) : ?>
-
   <div class="carousel-inner">
     <?php
+      if ( !have_rows( ...$field_params ) ) :
       while ($enterprises_query->have_posts()) : $enterprises_query->the_post();
       $cond = $enterprise_loop === 0;
     ?>
@@ -33,11 +32,7 @@
 
     <?php $enterprise_loop++; endwhile; ?>
 
-  </div>
-
-  <?php else: ?>
-
-  <div class="carousel-inner">
+    <?php else: ?>
 
     <?php
       while ( have_rows( ...$field_params ) ) : the_row();
@@ -46,14 +41,14 @@
     ?>
 
     <div class="carousel-item <?= ltco_condition($cond, 'active'); ?>">
-      <figure class="carousel-image" <?= styleInline( $image_featured['url'] ); ?>></figure>
+      <figure class="carousel-image" <?= styleInline( $image_featured['url'] ); ?>>
+        <?= ltco_carousel_image_link( $name_field_carousel ); ?>
+      </figure>
     </div>
 
-    <?php $carousel_loop++; endwhile; ?>
+    <?php $carousel_loop++; endwhile; endif; ?>
 
   </div>
-
-  <?php endif; ?>
 
   <a class="carousel-control-prev" href="#carouselHome" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
